@@ -138,8 +138,8 @@ Light:
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 1
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1
+  m_Color: {r: 0.9622642, g: 0.7040958, b: 0, a: 1}
+  m_Intensity: 0.5
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -147,7 +147,7 @@ Light:
     m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 1
+    m_Strength: 0.342
     m_Bias: 0.05
     m_NormalBias: 0.4
     m_NearPlane: 0.2
@@ -158,9 +158,9 @@ Light:
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_Lightmapping: 1
+  m_Lightmapping: 4
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1
+  m_BounceIntensity: 0.5
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
@@ -178,6 +178,48 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1001 &215722365
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 849154022}
+    m_Modifications:
+    - target: {fileID: 4876078539567596, guid: 458f2ebc06210114f8d6674d3bcdc914, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -0.68
+      objectReference: {fileID: 0}
+    - target: {fileID: 4876078539567596, guid: 458f2ebc06210114f8d6674d3bcdc914, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.120000005
+      objectReference: {fileID: 0}
+    - target: {fileID: 4876078539567596, guid: 458f2ebc06210114f8d6674d3bcdc914, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0.81
+      objectReference: {fileID: 0}
+    - target: {fileID: 4876078539567596, guid: 458f2ebc06210114f8d6674d3bcdc914, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4876078539567596, guid: 458f2ebc06210114f8d6674d3bcdc914, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4876078539567596, guid: 458f2ebc06210114f8d6674d3bcdc914, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4876078539567596, guid: 458f2ebc06210114f8d6674d3bcdc914, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4876078539567596, guid: 458f2ebc06210114f8d6674d3bcdc914, type: 2}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 458f2ebc06210114f8d6674d3bcdc914, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &228643368
 GameObject:
   m_ObjectHideFlags: 0
@@ -273,7 +315,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 282840810}
   m_LocalRotation: {x: 0.6796499, y: 0.0054965913, z: -0.005094014, w: 0.73349845}
-  m_LocalPosition: {x: -0.8999501, y: 9.2779455, z: -0.22524042}
+  m_LocalPosition: {x: -0.91, y: 17.46, z: -0.85}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -297,8 +339,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFiringLeft: 0
   bullet: {fileID: 114469739589128550, guid: c013696132bb0e342b0dc6f4cbd98c30, type: 2}
-  bulletSpeed: 5
-  shotTimerL: 0
+  fireballSpell: {fileID: 114789143137719270, guid: 7ceb163270e577c44b4f1c9be2b0df66,
+    type: 2}
+  lightningSpell: {fileID: 114896744536243420, guid: 458f2ebc06210114f8d6674d3bcdc914,
+    type: 2}
+  WeaponChoice: 2
+  bulletSpeed: 20
+  shotTimerL: 0.8
   firePoint: {fileID: 1620051763}
 --- !u!4 &849154022 stripped
 Transform:
@@ -323,8 +370,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFiringRight: 0
   bullet: {fileID: 114469739589128550, guid: c013696132bb0e342b0dc6f4cbd98c30, type: 2}
-  bulletSpeed: 5
-  shotTimerR: 0
+  bulletSpeed: 80
+  shotTimerR: 0.5
   firePoint: {fileID: 228643370}
 --- !u!1001 &989338896
 Prefab:
@@ -368,7 +415,7 @@ Prefab:
     - target: {fileID: 54203336515334478, guid: c6e976e47d8ec5c48bafde0625517202,
         type: 2}
       propertyPath: m_Constraints
-      value: 0
+      value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 4560179059955294, guid: c6e976e47d8ec5c48bafde0625517202, type: 2}
       propertyPath: m_RootOrder
@@ -384,6 +431,19 @@ Prefab:
       propertyPath: leftHand
       value: 
       objectReference: {fileID: 378279286}
+    - target: {fileID: 114818233707759888, guid: c6e976e47d8ec5c48bafde0625517202,
+        type: 2}
+      propertyPath: moveSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4465011232045012, guid: c6e976e47d8ec5c48bafde0625517202, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4465011232045012, guid: c6e976e47d8ec5c48bafde0625517202, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c6e976e47d8ec5c48bafde0625517202, type: 2}
   m_IsPrefabParent: 0
@@ -416,6 +476,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFiringLeft: 0
   bullet: {fileID: 114469739589128550, guid: c013696132bb0e342b0dc6f4cbd98c30, type: 2}
+  fireballSpell: {fileID: 0}
+  lightningSpell: {fileID: 0}
+  WeaponChoice: 0
   bulletSpeed: 5
   shotTimerL: 0
   firePoint: {fileID: 1620051763}
@@ -426,11 +489,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1620051761}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.728, y: 0.052000046, z: 0.776}
+  m_LocalPosition: {x: -0.46, y: 0.052000046, z: 1.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 849154022}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1796537743
 GameObject:
@@ -514,7 +577,7 @@ Transform:
   m_GameObject: {fileID: 1796537743}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4, y: 1, z: 4}
+  m_LocalScale: {x: 50, y: 50, z: 50}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
