@@ -8,6 +8,7 @@ public class ShootingScriptLeft : MonoBehaviour {
     public StandardBullet bullet;
     public Fireball fireballSpell;
     public Lightning lightningSpell;
+    public GameObject lightSpell;
     public int WeaponChoice;
     public float bulletSpeed;
 
@@ -56,6 +57,7 @@ public class ShootingScriptLeft : MonoBehaviour {
                     shotCounterL = shotTimerL;
                     Fireball newFireballSpell = Instantiate(fireballSpell, firePoint.position, firePoint.rotation) as Fireball;
                     newFireballSpell.speed = bulletSpeed;
+                       
                 }
             }
 
@@ -74,15 +76,17 @@ public class ShootingScriptLeft : MonoBehaviour {
                 if (shotCounterL <= 0)
                 {
                     shotCounterL = shotTimerL;
-                    Lightning newLightningSpell = Instantiate(lightningSpell, firePoint.position, firePoint.rotation) as Lightning;
+                    lightSpell.SetActive(true);
 
                 }
+              
+                
             }
 
             else
             {
                 shotCounterL = 0;
-
+                lightSpell.SetActive(false);
             }
         }
 

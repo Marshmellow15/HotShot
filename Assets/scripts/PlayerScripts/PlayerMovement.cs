@@ -5,14 +5,17 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour {
 
 
-
+    private Lightning lightning;
     public float moveSpeed;
     private Rigidbody PlayerRigidbody;
     public ShootingScriptRight rightHand;
     public ShootingScriptLeft leftHand;
-    
 
-	void Start ()
+     void Awake()
+    {
+        lightning = GetComponent<Lightning>();
+    }
+    void Start ()
     {
         PlayerRigidbody = GetComponent<Rigidbody>();
   
@@ -23,16 +26,20 @@ public class PlayerMovement : MonoBehaviour {
     {
         Movement();
         Rotation();
+
         //Right Hand shooting
         if (Input.GetMouseButtonDown(1))
         {
             rightHand.isFiringRight = true;
 
         }
+ 
         if (Input.GetMouseButtonUp(1))
         {
             rightHand.isFiringRight = false;
         }
+        
+
         //Left Hand Shooting
         if (Input.GetMouseButtonDown(0))
         {
@@ -43,7 +50,10 @@ public class PlayerMovement : MonoBehaviour {
         {
             leftHand.isFiringLeft = false;
         }
+
     }
+
+
 
     void Movement ()
     {
@@ -51,6 +61,10 @@ public class PlayerMovement : MonoBehaviour {
         float verti   = Input.GetAxis("Vertical");
 
         Vector3 _movement = new Vector3(horiz, 0, verti);
+        if(_movement.magnitude > 1 )
+        {
+            _movement.Normalize();
+        }
         transform.Translate(_movement * moveSpeed * Time.deltaTime, Space.World);
 
     }

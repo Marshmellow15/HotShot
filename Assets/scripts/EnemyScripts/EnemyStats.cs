@@ -12,8 +12,6 @@ public class EnemyStats : StateMachineBehaviour
         public float lookRadius = 1f;
         public float accuracy = 3.0f;
         public float attackRange = 1f;
-        public float attackRate = 1f;
-        public float attackForce = 15f;
         public int   attackDamage = 50;
 
         public float searchDuration = 4f;

@@ -62,7 +62,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1331605903920882
 GameObject:
   m_ObjectHideFlags: 1
@@ -196,7 +196,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1652004366577786}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -35.037106, y: 1.46, z: -40.973053}
+  m_LocalPosition: {x: -34.80528, y: 1.5204887e-17, z: -6.6509867}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4111845684744250}
@@ -451,8 +451,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 10
-  rightHand: {fileID: 0}
-  leftHand: {fileID: 0}
+  rightHand: {fileID: 114813762843014464}
+  leftHand: {fileID: 114248788425842502}
 --- !u!114 &114248788425842502
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -470,7 +470,7 @@ MonoBehaviour:
     type: 2}
   lightningSpell: {fileID: 114896744536243420, guid: 458f2ebc06210114f8d6674d3bcdc914,
     type: 2}
-  WeaponChoice: 0
+  WeaponChoice: 2
   bulletSpeed: 40
   shotTimerL: 0.5
   firePoint: {fileID: 4114840521131166}

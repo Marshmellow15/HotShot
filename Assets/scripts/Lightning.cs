@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class Lightning : MonoBehaviour {
 
- 
+   
 
-	void Start () {
-		
-	}
+	public void Start ()
+    {
+     
+    }
 
     void Update()
     {
-   
+        
     }
+
 }

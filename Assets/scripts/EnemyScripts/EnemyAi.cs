@@ -11,6 +11,9 @@ public class EnemyAi : MonoBehaviour {
     public float bulletSpeed;
     public StandardBullet bullet;
     public GameObject Firepoint;
+
+
+
     public GameObject GetPlayer()
     {
         return player;
