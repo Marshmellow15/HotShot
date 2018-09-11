@@ -7,6 +7,7 @@ public class EnemyStats : StateMachineBehaviour
     {
         public GameObject Enemy;
         public GameObject Player;
+        public EnemyAi EnemyAi;
         public float moveSpeed = 7;
         public float lookRange = 40f;
         public float lookRadius = 1f;
@@ -20,7 +21,8 @@ public class EnemyStats : StateMachineBehaviour
     public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         Enemy = animator.gameObject;
-        Player = Enemy.GetComponent<EnemyAi>().GetPlayer();
+        EnemyAi = Enemy.GetComponent<EnemyAi>();
+        Player = EnemyAi.GetPlayer();
     }
 
 

@@ -10,7 +10,7 @@ public class ShootingScriptRight : MonoBehaviour {
     public Fireball fireballSpell;
     public Lightning lightningSpell;
     public GameObject lightSpell;
-    public int WeaponChoice;
+    public int WeaponChoiceR;
     public float bulletSpeed;
 
 
@@ -20,29 +20,25 @@ public class ShootingScriptRight : MonoBehaviour {
     public Transform firePoint;
 
 
-	void Start () {
-		
+	void Start ()
+    {
+        WeaponChoiceR = 4;	
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if(isFiringRight)
-        {
-            shotCounterR -= Time.deltaTime;
-            if(shotCounterR <= 0)
-            {
-                shotCounterR = shotTimerR;
-                StandardBullet newBullet = Instantiate(bullet, firePoint.position, firePoint.rotation) as StandardBullet;
-                newBullet.speed = bulletSpeed;
-            }
-        }
-        else
-        {
-            shotCounterR = 0;
+        if (Input.GetKeyDown(KeyCode.Keypad4))
+            WeaponChoiceR = 4;
+        if (Input.GetKeyDown(KeyCode.Keypad5))
+            WeaponChoiceR = 5;
+        if (Input.GetKeyDown(KeyCode.Keypad6))
+            WeaponChoiceR = 6;
 
-        }
-    //StandardBullets
-    if (WeaponChoice == 4)
+
+        
+
+        //StandardBullets
+        if (WeaponChoiceR == 4)
     {
         if (isFiringRight)
         {
@@ -62,7 +58,7 @@ public class ShootingScriptRight : MonoBehaviour {
         }
     }
     //FireBall spell
-    if (WeaponChoice == 5)
+    if (WeaponChoiceR == 5)
     {
         if (isFiringRight)
         {
@@ -83,7 +79,7 @@ public class ShootingScriptRight : MonoBehaviour {
         }
     }
     //Lightning spell
-    if (WeaponChoice == 36)
+    if (WeaponChoiceR == 6)
     {
         if (isFiringRight)
         {

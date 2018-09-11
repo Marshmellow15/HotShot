@@ -10,6 +10,14 @@ public class PlayerMovement : MonoBehaviour {
     private Rigidbody PlayerRigidbody;
     public ShootingScriptRight rightHand;
     public ShootingScriptLeft leftHand;
+    //evasion variables
+    //public float evasionSpeed = 20;
+    public float evadeTime;
+    public float evadeTimer;
+    public float evadeDist;
+    public float cooldownTimer = 0;
+    private bool evading;
+    public Vector3 _movement;
 
      void Awake()
     {
@@ -26,7 +34,7 @@ public class PlayerMovement : MonoBehaviour {
     {
         Movement();
         Rotation();
-
+        
         //Right Hand shooting
         if (Input.GetMouseButtonDown(1))
         {
@@ -60,13 +68,13 @@ public class PlayerMovement : MonoBehaviour {
         float horiz= Input.GetAxis("Horizontal");
         float verti   = Input.GetAxis("Vertical");
 
-        Vector3 _movement = new Vector3(horiz, 0, verti);
+        _movement = new Vector3(horiz, 0, verti);
         if(_movement.magnitude > 1 )
         {
             _movement.Normalize();
         }
         transform.Translate(_movement * moveSpeed * Time.deltaTime, Space.World);
-
+        Evasion();
     }
     void Rotation()
     {
@@ -76,6 +84,29 @@ public class PlayerMovement : MonoBehaviour {
         if (Physics.Raycast(_ray, out _hit))
         {
             transform.LookAt(new Vector3(_hit.point.x, transform.position.y, _hit.point.z));
+        }
+
+    }
+    void Evasion()
+    {
+        cooldownTimer = Mathf.Max(0f, cooldownTimer - Time.deltaTime);
+
+        if (!evading && cooldownTimer == 0 && Input.GetKeyDown(KeyCode.Space))
+        {
+            evading = true;
+            evadeTimer = evadeTime;
+           
+        }
+
+        if(evading)
+        {
+            evadeTimer = Mathf.Max(0f, evadeTimer - Time.deltaTime);
+            transform.Translate(_movement * evadeDist * Time.deltaTime, Space.World);
+        }
+        
+        if(evadeTimer == 0)
+        {
+            evading = false;
         }
 
     }

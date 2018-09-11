@@ -9,7 +9,7 @@ public class ShootingScriptLeft : MonoBehaviour {
     public Fireball fireballSpell;
     public Lightning lightningSpell;
     public GameObject lightSpell;
-    public int WeaponChoice;
+    public int WeaponChoiceL;
     public float bulletSpeed;
 
     public float shotTimerL;
@@ -20,14 +20,23 @@ public class ShootingScriptLeft : MonoBehaviour {
 
     void Start()
     {
-
+        WeaponChoiceL = 1;
     }
 
     // Update is called once per frame
     void Update()
     {
+
+        if (Input.GetKeyDown(KeyCode.Keypad1))
+            WeaponChoiceL = 1;
+        if (Input.GetKeyDown(KeyCode.Keypad2))
+            WeaponChoiceL = 2;
+        if (Input.GetKeyDown(KeyCode.Keypad3))
+            WeaponChoiceL = 3;
+
+
         //StandardBullets
-        if (WeaponChoice == 1)
+        if (WeaponChoiceL == 1)
         {
             if (isFiringLeft)
             {
@@ -47,7 +56,7 @@ public class ShootingScriptLeft : MonoBehaviour {
             }
         }
         //FireBall spell
-        if (WeaponChoice == 2)
+        if (WeaponChoiceL == 2)
         {
             if (isFiringLeft)
             {
@@ -68,7 +77,7 @@ public class ShootingScriptLeft : MonoBehaviour {
             }
         }
         //Lightning spell
-        if (WeaponChoice == 3)
+        if (WeaponChoiceL == 3)
         {
             if (isFiringLeft)
             {

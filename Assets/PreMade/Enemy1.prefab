@@ -281,6 +281,9 @@ MonoBehaviour:
   bulletSpeed: 2
   bullet: {fileID: 114469739589128550, guid: c013696132bb0e342b0dc6f4cbd98c30, type: 2}
   Firepoint: {fileID: 1658751417188116}
+  waypoints: []
+  EnemyHealth: 25
+  currentEnemyHealth: 0
 --- !u!136 &136942722752132872
 CapsuleCollider:
   m_ObjectHideFlags: 1

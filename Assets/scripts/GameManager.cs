@@ -2,10 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StateController : MonoBehaviour {
+public class GameManager : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
+
+
+    private bool gameOver;
+    private bool restart;
+
+    void Start () {
 		
 	}
 	
