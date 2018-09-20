@@ -13,6 +13,14 @@ public class ShootingScriptRight : MonoBehaviour {
     public int WeaponChoiceR;
     public float bulletSpeed;
 
+    public int maxMana = 40;
+    public int maxAmmo = 15;
+
+    public int currentAmmo;
+    public int currentMana;
+    public float reloadTime = 1f;
+    private bool isReloading = false;
+
 
     public float shotTimerR;
     private float shotCounterR;
@@ -22,18 +30,32 @@ public class ShootingScriptRight : MonoBehaviour {
 
 	void Start ()
     {
+        currentAmmo = maxAmmo;
+        currentMana = maxMana;
         WeaponChoiceR = 4;	
 	}
-	
-	// Update is called once per frame
-	void Update () {
+
+     void OnEnable()
+    {
+        isReloading = false;
+    }
+
+    // Update is called once per frame
+    void Update () {
         if (Input.GetKeyDown(KeyCode.Keypad4))
             WeaponChoiceR = 4;
         if (Input.GetKeyDown(KeyCode.Keypad5))
             WeaponChoiceR = 5;
         if (Input.GetKeyDown(KeyCode.Keypad6))
             WeaponChoiceR = 6;
+        if (isReloading)
+            return;
 
+            if (currentAmmo <= 0)
+            {
+                StartCoroutine(Reload());
+                return;
+            }
 
         
 
@@ -100,4 +122,11 @@ public class ShootingScriptRight : MonoBehaviour {
     }
 
   }
+    IEnumerator Reload()
+    {
+        isReloading = true;
+        yield return new WaitForSeconds(reloadTime);
+        currentAmmo = maxAmmo;
+        isReloading = false;
+    }
 }

@@ -389,7 +389,7 @@ Prefab:
     - target: {fileID: 114227255154726784, guid: 2568eae8bfdad2841acde9c87e7223ba,
         type: 2}
       propertyPath: bulletSpeed
-      value: 15
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 114227255154726784, guid: 2568eae8bfdad2841acde9c87e7223ba,
         type: 2}
@@ -421,6 +421,11 @@ Prefab:
       propertyPath: waypoints.Array.data[4]
       value: 
       objectReference: {fileID: 357393843}
+    - target: {fileID: 114227255154726784, guid: 2568eae8bfdad2841acde9c87e7223ba,
+        type: 2}
+      propertyPath: EnemyHealth
+      value: 15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2568eae8bfdad2841acde9c87e7223ba, type: 2}
   m_IsPrefabParent: 0
@@ -1078,6 +1083,16 @@ Prefab:
       propertyPath: waypoints.Array.data[3]
       value: 
       objectReference: {fileID: 1527531840}
+    - target: {fileID: 114227255154726784, guid: 2568eae8bfdad2841acde9c87e7223ba,
+        type: 2}
+      propertyPath: bulletSpeed
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 114227255154726784, guid: 2568eae8bfdad2841acde9c87e7223ba,
+        type: 2}
+      propertyPath: EnemyHealth
+      value: 15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2568eae8bfdad2841acde9c87e7223ba, type: 2}
   m_IsPrefabParent: 0
@@ -1450,6 +1465,16 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 1051874115}
+    - target: {fileID: 114227255154726784, guid: 2568eae8bfdad2841acde9c87e7223ba,
+        type: 2}
+      propertyPath: bulletSpeed
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 114227255154726784, guid: 2568eae8bfdad2841acde9c87e7223ba,
+        type: 2}
+      propertyPath: EnemyHealth
+      value: 15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2568eae8bfdad2841acde9c87e7223ba, type: 2}
   m_IsPrefabParent: 0
@@ -3029,6 +3054,16 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 1051874115}
+    - target: {fileID: 114227255154726784, guid: 2568eae8bfdad2841acde9c87e7223ba,
+        type: 2}
+      propertyPath: bulletSpeed
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 114227255154726784, guid: 2568eae8bfdad2841acde9c87e7223ba,
+        type: 2}
+      propertyPath: EnemyHealth
+      value: 15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2568eae8bfdad2841acde9c87e7223ba, type: 2}
   m_IsPrefabParent: 0
@@ -3089,7 +3124,7 @@ Prefab:
     - target: {fileID: 114227255154726784, guid: 2568eae8bfdad2841acde9c87e7223ba,
         type: 2}
       propertyPath: bulletSpeed
-      value: 15
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 114227255154726784, guid: 2568eae8bfdad2841acde9c87e7223ba,
         type: 2}
@@ -3128,7 +3163,7 @@ Prefab:
     - target: {fileID: 114227255154726784, guid: 2568eae8bfdad2841acde9c87e7223ba,
         type: 2}
       propertyPath: EnemyHealth
-      value: 25
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2568eae8bfdad2841acde9c87e7223ba, type: 2}
@@ -3196,6 +3231,16 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 1051874115}
+    - target: {fileID: 114227255154726784, guid: 2568eae8bfdad2841acde9c87e7223ba,
+        type: 2}
+      propertyPath: bulletSpeed
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 114227255154726784, guid: 2568eae8bfdad2841acde9c87e7223ba,
+        type: 2}
+      propertyPath: EnemyHealth
+      value: 15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2568eae8bfdad2841acde9c87e7223ba, type: 2}
   m_IsPrefabParent: 0
@@ -3282,6 +3327,16 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 1051874115}
+    - target: {fileID: 114227255154726784, guid: 2568eae8bfdad2841acde9c87e7223ba,
+        type: 2}
+      propertyPath: bulletSpeed
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 114227255154726784, guid: 2568eae8bfdad2841acde9c87e7223ba,
+        type: 2}
+      propertyPath: EnemyHealth
+      value: 15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2568eae8bfdad2841acde9c87e7223ba, type: 2}
   m_IsPrefabParent: 0
@@ -3404,6 +3459,16 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 1051874115}
+    - target: {fileID: 114227255154726784, guid: 2568eae8bfdad2841acde9c87e7223ba,
+        type: 2}
+      propertyPath: bulletSpeed
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 114227255154726784, guid: 2568eae8bfdad2841acde9c87e7223ba,
+        type: 2}
+      propertyPath: EnemyHealth
+      value: 15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2568eae8bfdad2841acde9c87e7223ba, type: 2}
   m_IsPrefabParent: 0
@@ -4446,7 +4511,7 @@ Prefab:
     - target: {fileID: 114227255154726784, guid: 2568eae8bfdad2841acde9c87e7223ba,
         type: 2}
       propertyPath: bulletSpeed
-      value: 15
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 114227255154726784, guid: 2568eae8bfdad2841acde9c87e7223ba,
         type: 2}
@@ -4481,6 +4546,11 @@ Prefab:
     - target: {fileID: 1075051410343064, guid: 2568eae8bfdad2841acde9c87e7223ba, type: 2}
       propertyPath: m_Name
       value: Enemy1 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114227255154726784, guid: 2568eae8bfdad2841acde9c87e7223ba,
+        type: 2}
+      propertyPath: EnemyHealth
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2568eae8bfdad2841acde9c87e7223ba, type: 2}
@@ -4698,6 +4768,16 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 1051874115}
+    - target: {fileID: 114227255154726784, guid: 2568eae8bfdad2841acde9c87e7223ba,
+        type: 2}
+      propertyPath: bulletSpeed
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 114227255154726784, guid: 2568eae8bfdad2841acde9c87e7223ba,
+        type: 2}
+      propertyPath: EnemyHealth
+      value: 15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2568eae8bfdad2841acde9c87e7223ba, type: 2}
   m_IsPrefabParent: 0
@@ -5053,6 +5133,16 @@ Prefab:
       propertyPath: waypoints.Array.data[3]
       value: 
       objectReference: {fileID: 1527531840}
+    - target: {fileID: 114227255154726784, guid: 2568eae8bfdad2841acde9c87e7223ba,
+        type: 2}
+      propertyPath: bulletSpeed
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 114227255154726784, guid: 2568eae8bfdad2841acde9c87e7223ba,
+        type: 2}
+      propertyPath: EnemyHealth
+      value: 15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2568eae8bfdad2841acde9c87e7223ba, type: 2}
   m_IsPrefabParent: 0
@@ -5263,6 +5353,16 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 1051874115}
+    - target: {fileID: 114227255154726784, guid: 2568eae8bfdad2841acde9c87e7223ba,
+        type: 2}
+      propertyPath: bulletSpeed
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 114227255154726784, guid: 2568eae8bfdad2841acde9c87e7223ba,
+        type: 2}
+      propertyPath: EnemyHealth
+      value: 15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2568eae8bfdad2841acde9c87e7223ba, type: 2}
   m_IsPrefabParent: 0
@@ -6207,7 +6307,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4083346561361958, guid: 9f1fdea962065ec40bd10ad4c78b93aa, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -9.88
+      value: 0.44
       objectReference: {fileID: 0}
     - target: {fileID: 4083346561361958, guid: 9f1fdea962065ec40bd10ad4c78b93aa, type: 2}
       propertyPath: m_LocalPosition.z
@@ -6321,7 +6421,7 @@ Prefab:
     - target: {fileID: 114679730320071394, guid: c6e976e47d8ec5c48bafde0625517202,
         type: 2}
       propertyPath: startingHealth
-      value: 35
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c6e976e47d8ec5c48bafde0625517202, type: 2}
@@ -6489,6 +6589,16 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 1051874115}
+    - target: {fileID: 114227255154726784, guid: 2568eae8bfdad2841acde9c87e7223ba,
+        type: 2}
+      propertyPath: bulletSpeed
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 114227255154726784, guid: 2568eae8bfdad2841acde9c87e7223ba,
+        type: 2}
+      propertyPath: EnemyHealth
+      value: 15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2568eae8bfdad2841acde9c87e7223ba, type: 2}
   m_IsPrefabParent: 0
@@ -6834,6 +6944,16 @@ Prefab:
       propertyPath: waypoints.Array.data[3]
       value: 
       objectReference: {fileID: 1527531840}
+    - target: {fileID: 114227255154726784, guid: 2568eae8bfdad2841acde9c87e7223ba,
+        type: 2}
+      propertyPath: bulletSpeed
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 114227255154726784, guid: 2568eae8bfdad2841acde9c87e7223ba,
+        type: 2}
+      propertyPath: EnemyHealth
+      value: 15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2568eae8bfdad2841acde9c87e7223ba, type: 2}
   m_IsPrefabParent: 0
@@ -7103,6 +7223,16 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 1051874115}
+    - target: {fileID: 114227255154726784, guid: 2568eae8bfdad2841acde9c87e7223ba,
+        type: 2}
+      propertyPath: bulletSpeed
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 114227255154726784, guid: 2568eae8bfdad2841acde9c87e7223ba,
+        type: 2}
+      propertyPath: EnemyHealth
+      value: 15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2568eae8bfdad2841acde9c87e7223ba, type: 2}
   m_IsPrefabParent: 0
@@ -7613,6 +7743,16 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 1051874115}
+    - target: {fileID: 114227255154726784, guid: 2568eae8bfdad2841acde9c87e7223ba,
+        type: 2}
+      propertyPath: bulletSpeed
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 114227255154726784, guid: 2568eae8bfdad2841acde9c87e7223ba,
+        type: 2}
+      propertyPath: EnemyHealth
+      value: 15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2568eae8bfdad2841acde9c87e7223ba, type: 2}
   m_IsPrefabParent: 0
