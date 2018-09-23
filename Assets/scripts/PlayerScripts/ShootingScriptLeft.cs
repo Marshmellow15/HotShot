@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class ShootingScriptLeft : MonoBehaviour {
+
     public bool isFiringLeft;
 
     public StandardBullet bullet;
@@ -32,7 +33,7 @@ public class ShootingScriptLeft : MonoBehaviour {
     {
         currentAmmo = maxAmmo;
         currentMana = maxMana;
-        WeaponChoiceL = 1;
+        //WeaponChoiceL = 1;
     }
 
     // Update is called once per frame

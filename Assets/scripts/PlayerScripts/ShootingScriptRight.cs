@@ -33,7 +33,7 @@ public class ShootingScriptRight : MonoBehaviour {
     {
         currentAmmo = maxAmmo;
         currentMana = maxMana;
-        WeaponChoiceR = 4;	
+        //WeaponChoiceR = 4;	
 	}
 
      void OnEnable()
@@ -53,7 +53,7 @@ public class ShootingScriptRight : MonoBehaviour {
         if (isReloading)
             return;
 
-            if (currentAmmo <= 0 || Input.GetKeyDown("r"))
+            if (currentAmmo < 0 || Input.GetKeyDown("r"))
             {
                 StartCoroutine(Reload());
                 return;
