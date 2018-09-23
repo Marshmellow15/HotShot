@@ -33,8 +33,8 @@ public class ShootingScriptRight : MonoBehaviour {
     {
         currentAmmo = maxAmmo;
         currentMana = maxMana;
-        //WeaponChoiceR = 4;	
-	}
+
+    }
 
      void OnEnable()
     {
@@ -43,6 +43,22 @@ public class ShootingScriptRight : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
+        
+         DropDownRight loadout = GetComponent<DropDownRight>();
+        
+        if (loadout.RightDownValue == 0)
+        {
+            WeaponChoiceR = 4;
+        }
+        if (loadout.RightDownValue == 1)
+        {
+            WeaponChoiceR = 5;
+        }
+        if (loadout.RightDownValue == 2)
+        {
+            WeaponChoiceR = 6;
+        }
+        
         if (Input.GetKeyDown(KeyCode.Keypad4))
             WeaponChoiceR = 4;
         if (Input.GetKeyDown(KeyCode.Keypad5))

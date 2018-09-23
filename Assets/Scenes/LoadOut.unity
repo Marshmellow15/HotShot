@@ -162,8 +162,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86fa0952a523a8240b714e029131f3bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Shootleft: {fileID: 0}
-  ShootRight: {fileID: 0}
 --- !u!1 &39789622
 GameObject:
   m_ObjectHideFlags: 0
@@ -967,6 +965,7 @@ GameObject:
   - component: {fileID: 819099692}
   - component: {fileID: 819099691}
   - component: {fileID: 819099690}
+  - component: {fileID: 819099693}
   m_Layer: 5
   m_Name: Dropdown
   m_TagString: Untagged
@@ -1083,6 +1082,19 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 819099688}
+--- !u!114 &819099693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 819099688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89576213f8e93ec44b1b92bd7acd7d94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  R_Dropdown: {fileID: 819099690}
+  RightDownValue: 0
 --- !u!1 &857108954
 GameObject:
   m_ObjectHideFlags: 0
@@ -2215,6 +2227,7 @@ GameObject:
   - component: {fileID: 1433527895}
   - component: {fileID: 1433527894}
   - component: {fileID: 1433527893}
+  - component: {fileID: 1433527896}
   m_Layer: 5
   m_Name: Dropdown
   m_TagString: Untagged
@@ -2331,6 +2344,19 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1433527891}
+--- !u!114 &1433527896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1433527891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1efb1eb3149348a40b624d72545deded, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  L_Dropdown: {fileID: 1433527893}
+  LeftDownValue: 0
 --- !u!1 &1441387925
 GameObject:
   m_ObjectHideFlags: 0

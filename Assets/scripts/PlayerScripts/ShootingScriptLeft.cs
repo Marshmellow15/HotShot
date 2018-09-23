@@ -33,12 +33,26 @@ public class ShootingScriptLeft : MonoBehaviour {
     {
         currentAmmo = maxAmmo;
         currentMana = maxMana;
-        //WeaponChoiceL = 1;
+
+       
     }
 
     // Update is called once per frame
     void Update()
     {
+        DropDownLeft loadout = GetComponent<DropDownLeft>();
+        if (loadout.LeftDownValue == 0)
+        {
+            WeaponChoiceL = 1;
+        }
+        if (loadout.LeftDownValue == 1)
+        {
+            WeaponChoiceL = 2;
+        }
+        if (loadout.LeftDownValue == 2)
+        {
+            WeaponChoiceL = 3;
+        }
 
         if (Input.GetKeyDown(KeyCode.Keypad1))
             WeaponChoiceL = 1;
