@@ -597,6 +597,12 @@ MonoBehaviour:
   WeaponChoiceL: 0
   bulletSpeed: 40
   shotTimerL: 0.5
+  maxMana: 40
+  maxAmmo: 15
+  ShotText: {fileID: 0}
+  currentAmmo: 0
+  currentMana: 0
+  reloadTime: 1
   firePoint: {fileID: 4114840521131166}
 --- !u!114 &114679730320071394
 MonoBehaviour:
@@ -609,8 +615,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 331f5edb2a45dfe44ab2040dcb3f1307, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 20
+  startingHealth: 12
   currentHealth: 0
+  shootleft: {fileID: 114248788425842502}
+  shootRight: {fileID: 114813762843014464}
+  movement: {fileID: 114237894441592996}
+  player: {fileID: 1652004366577786}
 --- !u!114 &114813762843014464
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -631,6 +641,12 @@ MonoBehaviour:
   lightSpell: {fileID: 1618624908243788}
   WeaponChoiceR: 0
   bulletSpeed: 40
+  maxMana: 40
+  maxAmmo: 15
+  currentAmmo: 0
+  currentMana: 0
+  reloadTime: 1
+  ShotText: {fileID: 0}
   shotTimerR: 0.5
   firePoint: {fileID: 4647566942129824}
 --- !u!114 &114863278720262460

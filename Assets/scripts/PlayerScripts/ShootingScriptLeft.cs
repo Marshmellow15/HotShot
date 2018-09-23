@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ShootingScriptLeft : MonoBehaviour {
     public bool isFiringLeft;
@@ -15,11 +16,22 @@ public class ShootingScriptLeft : MonoBehaviour {
     public float shotTimerL;
     private float shotCounterL;
 
+    public int maxMana = 40;
+    public int maxAmmo = 15;
+    public Text ShotText;
+
+    public int currentAmmo;
+    public int currentMana;
+    public float reloadTime = 1f;
+    private bool isReloading = false;
+
     public Transform firePoint;
 
 
     void Start()
     {
+        currentAmmo = maxAmmo;
+        currentMana = maxMana;
         WeaponChoiceL = 1;
     }
 
@@ -34,7 +46,17 @@ public class ShootingScriptLeft : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.Keypad3))
             WeaponChoiceL = 3;
 
+        if (isReloading)
+            return;
 
+        if (currentAmmo < 0 || Input.GetKeyDown("r"))
+        {
+            StartCoroutine(Reload());
+            return;
+        }
+
+        //UI ammo Counter
+        ShotText.text = currentAmmo + "/" + maxAmmo;
         //StandardBullets
         if (WeaponChoiceL == 1)
         {
@@ -46,6 +68,7 @@ public class ShootingScriptLeft : MonoBehaviour {
                     shotCounterL = shotTimerL;
                     StandardBullet newBullet = Instantiate(bullet, firePoint.position, firePoint.rotation) as StandardBullet;
                     newBullet.speed = bulletSpeed;
+                    currentAmmo -= 1;
                 }
             }
 
@@ -58,7 +81,7 @@ public class ShootingScriptLeft : MonoBehaviour {
         //FireBall spell
         if (WeaponChoiceL == 2)
         {
-            if (isFiringLeft)
+            if (isFiringLeft && currentMana > 0)
             {
                 shotCounterL -= Time.deltaTime;
                 if (shotCounterL <= 0)
@@ -66,7 +89,7 @@ public class ShootingScriptLeft : MonoBehaviour {
                     shotCounterL = shotTimerL;
                     Fireball newFireballSpell = Instantiate(fireballSpell, firePoint.position, firePoint.rotation) as Fireball;
                     newFireballSpell.speed = bulletSpeed;
-                       
+                    currentMana -= 8;
                 }
             }
 
@@ -75,6 +98,10 @@ public class ShootingScriptLeft : MonoBehaviour {
                 shotCounterL = 0;
 
             }
+        }
+        if (currentMana <= 0)
+        {
+            currentMana = 0;
         }
         //Lightning spell
         if (WeaponChoiceL == 3)
@@ -102,5 +129,12 @@ public class ShootingScriptLeft : MonoBehaviour {
 
 
 
+    }
+    IEnumerator Reload()
+    {
+        isReloading = true;
+        yield return new WaitForSeconds(reloadTime);
+        currentAmmo = maxAmmo;
+        isReloading = false;
     }
 }

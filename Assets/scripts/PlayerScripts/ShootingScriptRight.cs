@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ShootingScriptRight : MonoBehaviour {
 
@@ -21,7 +22,7 @@ public class ShootingScriptRight : MonoBehaviour {
     public float reloadTime = 1f;
     private bool isReloading = false;
 
-
+    public Text ShotText;
     public float shotTimerR;
     private float shotCounterR;
 
@@ -48,16 +49,18 @@ public class ShootingScriptRight : MonoBehaviour {
             WeaponChoiceR = 5;
         if (Input.GetKeyDown(KeyCode.Keypad6))
             WeaponChoiceR = 6;
+
         if (isReloading)
             return;
 
-            if (currentAmmo <= 0)
+            if (currentAmmo <= 0 || Input.GetKeyDown("r"))
             {
                 StartCoroutine(Reload());
                 return;
             }
+        //UI ammo Counter
+        ShotText.text = currentAmmo + "/" + maxAmmo;
 
-        
 
         //StandardBullets
         if (WeaponChoiceR == 4)
@@ -70,7 +73,9 @@ public class ShootingScriptRight : MonoBehaviour {
                 shotCounterR = shotTimerR;
                 StandardBullet newBullet = Instantiate(bullet, firePoint.position, firePoint.rotation) as StandardBullet;
                 newBullet.speed = bulletSpeed;
-            }
+                currentAmmo -= 1;
+                }
+                
         }
 
         else
@@ -82,7 +87,7 @@ public class ShootingScriptRight : MonoBehaviour {
     //FireBall spell
     if (WeaponChoiceR == 5)
     {
-        if (isFiringRight)
+        if (isFiringRight && currentMana > 0)
         {
             shotCounterR -= Time.deltaTime;
             if (shotCounterR <= 0)
@@ -90,9 +95,10 @@ public class ShootingScriptRight : MonoBehaviour {
                 shotCounterR = shotTimerR;
                 Fireball newFireballSpell = Instantiate(fireballSpell, firePoint.position, firePoint.rotation) as Fireball;
                 newFireballSpell.speed = bulletSpeed;
-
+                currentMana -= 8;
+                }
+                
             }
-        }
 
         else
         {
@@ -100,8 +106,12 @@ public class ShootingScriptRight : MonoBehaviour {
 
         }
     }
-    //Lightning spell
-    if (WeaponChoiceR == 6)
+        if (currentMana <= 0)
+        {
+            currentMana = 0;
+        }
+        //Lightning spell
+        if (WeaponChoiceR == 6)
     {
         if (isFiringRight)
         {
