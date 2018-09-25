@@ -12,11 +12,11 @@ public class DropDownLeft : MonoBehaviour
     {
         L_Dropdown = GetComponent<Dropdown>();
     }
+  
 
-    // Update is called once per frame
+
     void Update()
-    {
-        LeftDownValue = L_Dropdown.value;
-
-    }
+        {
+            LeftDownValue = L_Dropdown.value;
+        }
 }

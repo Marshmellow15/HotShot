@@ -40,6 +40,7 @@ public class ShootingScriptLeft : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
+        /*
         DropDownLeft loadout = GetComponent<DropDownLeft>();
         if (loadout.LeftDownValue == 0)
         {
@@ -52,7 +53,7 @@ public class ShootingScriptLeft : MonoBehaviour {
         if (loadout.LeftDownValue == 2)
         {
             WeaponChoiceL = 3;
-        }
+        }*/
 
         if (Input.GetKeyDown(KeyCode.Keypad1))
             WeaponChoiceL = 1;

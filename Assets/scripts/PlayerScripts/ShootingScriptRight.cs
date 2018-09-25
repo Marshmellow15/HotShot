@@ -43,7 +43,7 @@ public class ShootingScriptRight : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        
+        /*
          DropDownRight loadout = GetComponent<DropDownRight>();
         
         if (loadout.RightDownValue == 0)
@@ -57,7 +57,7 @@ public class ShootingScriptRight : MonoBehaviour {
         if (loadout.RightDownValue == 2)
         {
             WeaponChoiceR = 6;
-        }
+        }*/
         
         if (Input.GetKeyDown(KeyCode.Keypad4))
             WeaponChoiceR = 4;

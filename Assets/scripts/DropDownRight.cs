@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-public class DropDownRight : MonoBehaviour {
 
+
+public class DropDownRight : MonoBehaviour {
 
     public Dropdown R_Dropdown;
     public int RightDownValue;
@@ -11,9 +12,9 @@ public class DropDownRight : MonoBehaviour {
     {
         R_Dropdown = GetComponent<Dropdown>();
     }
-	
-	// Update is called once per frame
-	void Update ()
+   
+    // Update is called once per frame
+    void Update ()
     {
         RightDownValue = R_Dropdown.value;
     }
