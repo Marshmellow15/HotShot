@@ -10,12 +10,15 @@ public class DropDownRight : MonoBehaviour {
     public int RightDownValue;
     void Start ()
     {
-        R_Dropdown = GetComponent<Dropdown>();
+        //R_Dropdown = GetComponent<Dropdown>();
     }
    
     // Update is called once per frame
-    void Update ()
+  public void Update ()
     {
-        RightDownValue = R_Dropdown.value;
+        if (R_Dropdown)
+        {
+            RightDownValue = R_Dropdown.value;
+        }
     }
 }

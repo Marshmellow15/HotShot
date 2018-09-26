@@ -10,13 +10,16 @@ public class DropDownLeft : MonoBehaviour
 
     void Start()
     {
-        L_Dropdown = GetComponent<Dropdown>();
+        //L_Dropdown = GetComponent<Dropdown>();
     }
   
 
 
-    void Update()
+    public void Update()
+    {
+        if (L_Dropdown)
         {
             LeftDownValue = L_Dropdown.value;
         }
+    }
 }

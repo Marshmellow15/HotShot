@@ -43,28 +43,20 @@ public class ShootingScriptRight : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        /*
-         DropDownRight loadout = GetComponent<DropDownRight>();
-        
-        if (loadout.RightDownValue == 0)
+        LoadoutSettings loadoutSettings = LoadoutSettings.instance;
+        if (loadoutSettings)
         {
-            WeaponChoiceR = 4;
+            WeaponChoiceR = loadoutSettings.RightDownValue + 4;
         }
-        if (loadout.RightDownValue == 1)
+        else
         {
-            WeaponChoiceR = 5;
+            if (Input.GetKeyDown(KeyCode.Keypad1))
+                WeaponChoiceR = 4;
+            if (Input.GetKeyDown(KeyCode.Keypad2))
+                WeaponChoiceR = 5;
+            if (Input.GetKeyDown(KeyCode.Keypad3))
+                WeaponChoiceR = 6;
         }
-        if (loadout.RightDownValue == 2)
-        {
-            WeaponChoiceR = 6;
-        }*/
-        
-        if (Input.GetKeyDown(KeyCode.Keypad4))
-            WeaponChoiceR = 4;
-        if (Input.GetKeyDown(KeyCode.Keypad5))
-            WeaponChoiceR = 5;
-        if (Input.GetKeyDown(KeyCode.Keypad6))
-            WeaponChoiceR = 6;
 
         if (isReloading)
             return;

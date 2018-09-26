@@ -965,9 +965,8 @@ GameObject:
   - component: {fileID: 819099692}
   - component: {fileID: 819099691}
   - component: {fileID: 819099690}
-  - component: {fileID: 819099693}
   m_Layer: 5
-  m_Name: Dropdown
+  m_Name: DropdownR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1082,19 +1081,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 819099688}
---- !u!114 &819099693
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 819099688}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89576213f8e93ec44b1b92bd7acd7d94, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  R_Dropdown: {fileID: 819099690}
-  RightDownValue: 0
 --- !u!1 &857108954
 GameObject:
   m_ObjectHideFlags: 0
@@ -1577,6 +1563,50 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.Toggle+ToggleEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
   m_IsOn: 1
+--- !u!1 &1005866031
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1005866035}
+  - component: {fileID: 1005866032}
+  m_Layer: 0
+  m_Name: LoadoutSettings
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1005866032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1005866031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0950d0d1ad48bda4fb94f645922191a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  L_Dropdown: {fileID: 1433527893}
+  R_Dropdown: {fileID: 819099690}
+  LeftDownValue: 0
+  RightDownValue: 0
+--- !u!4 &1005866035
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1005866031}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 623.6071, y: 316.96753, z: 8.916846}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1085062707
 GameObject:
   m_ObjectHideFlags: 0
@@ -2227,9 +2257,8 @@ GameObject:
   - component: {fileID: 1433527895}
   - component: {fileID: 1433527894}
   - component: {fileID: 1433527893}
-  - component: {fileID: 1433527896}
   m_Layer: 5
-  m_Name: Dropdown
+  m_Name: DropdownL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2344,19 +2373,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1433527891}
---- !u!114 &1433527896
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1433527891}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1efb1eb3149348a40b624d72545deded, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  L_Dropdown: {fileID: 1433527893}
-  LeftDownValue: 0
 --- !u!1 &1441387925
 GameObject:
   m_ObjectHideFlags: 0
