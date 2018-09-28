@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour {
 
 
-    private Lightning lightning;
+   
     public float moveSpeed;
     private Rigidbody PlayerRigidbody;
     public ShootingScriptRight rightHand;
@@ -21,7 +21,7 @@ public class PlayerMovement : MonoBehaviour {
 
      void Awake()
     {
-        lightning = GetComponent<Lightning>();
+       
     }
     void Start ()
     {

@@ -193,7 +193,7 @@ Transform:
   m_GameObject: {fileID: 1282785428514024}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.15, y: -0.02, z: 1.48}
-  m_LocalScale: {x: 1.6666665, y: 1.25, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 4021003990065754}
   m_Father: {fileID: 4560179059955294}
@@ -289,7 +289,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1618624908243788}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.14, y: 0.120000005, z: 1.15}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
@@ -557,6 +557,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6625cf0a892647a40bd2baff5829bee9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LightningSystem: {fileID: 198221847270783814}
 --- !u!114 &114237894441592996
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -591,8 +592,7 @@ MonoBehaviour:
   bullet: {fileID: 114469739589128550, guid: c013696132bb0e342b0dc6f4cbd98c30, type: 2}
   fireballSpell: {fileID: 114789143137719270, guid: 7ceb163270e577c44b4f1c9be2b0df66,
     type: 2}
-  lightningSpell: {fileID: 114896744536243420, guid: 458f2ebc06210114f8d6674d3bcdc914,
-    type: 2}
+  lightningSpell: {fileID: 0}
   lightSpell: {fileID: 1282785428514024}
   WeaponChoiceL: 0
   bulletSpeed: 40
@@ -636,8 +636,7 @@ MonoBehaviour:
   bullet: {fileID: 114469739589128550, guid: c013696132bb0e342b0dc6f4cbd98c30, type: 2}
   fireballSpell: {fileID: 114789143137719270, guid: 7ceb163270e577c44b4f1c9be2b0df66,
     type: 2}
-  lightningSpell: {fileID: 114896744536243420, guid: 458f2ebc06210114f8d6674d3bcdc914,
-    type: 2}
+  lightningSpell: {fileID: 0}
   lightSpell: {fileID: 1618624908243788}
   WeaponChoiceR: 0
   bulletSpeed: 40
@@ -660,6 +659,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6625cf0a892647a40bd2baff5829bee9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LightningSystem: {fileID: 198034344934738542}
 --- !u!135 &135621601607130318
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -4097,7 +4097,7 @@ ParticleSystem:
   CollisionModule:
     enabled: 1
     serializedVersion: 3
-    type: 0
+    type: 1
     collisionMode: 0
     colliderForce: 0
     multiplyColliderForceByParticleSize: 0
@@ -4218,7 +4218,7 @@ ParticleSystem:
     m_EnergyLossOnCollision:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 1
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -4268,8 +4268,8 @@ ParticleSystem:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
-    minKillSpeed: 0
-    maxKillSpeed: 10000
+    minKillSpeed: 5
+    maxKillSpeed: 20
     radiusScale: 0.0001
     collidesWith:
       serializedVersion: 2
@@ -4277,7 +4277,7 @@ ParticleSystem:
     maxCollisionShapes: 256
     quality: 0
     voxelSize: 0.5
-    collisionMessages: 0
+    collisionMessages: 1
     collidesWithDynamic: 1
     interiorCollisions: 0
   TriggerModule:
@@ -5851,7 +5851,7 @@ ParticleSystem:
   ShapeModule:
     serializedVersion: 5
     enabled: 1
-    type: 0
+    type: 4
     angle: 25
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
@@ -8628,12 +8628,12 @@ ParticleSystem:
   CollisionModule:
     enabled: 1
     serializedVersion: 3
-    type: 0
+    type: 1
     collisionMode: 0
     colliderForce: 0
     multiplyColliderForceByParticleSize: 0
     multiplyColliderForceByParticleSpeed: 0
-    multiplyColliderForceByCollisionAngle: 1
+    multiplyColliderForceByCollisionAngle: 0
     plane0: {fileID: 0}
     plane1: {fileID: 0}
     plane2: {fileID: 0}
@@ -8749,7 +8749,7 @@ ParticleSystem:
     m_EnergyLossOnCollision:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 1
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -8799,8 +8799,8 @@ ParticleSystem:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
-    minKillSpeed: 0
-    maxKillSpeed: 10000
+    minKillSpeed: 5
+    maxKillSpeed: 20
     radiusScale: 0.0001
     collidesWith:
       serializedVersion: 2
@@ -8808,7 +8808,7 @@ ParticleSystem:
     maxCollisionShapes: 256
     quality: 0
     voxelSize: 0.5
-    collisionMessages: 0
+    collisionMessages: 1
     collidesWithDynamic: 1
     interiorCollisions: 0
   TriggerModule:
