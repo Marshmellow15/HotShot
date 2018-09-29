@@ -19,8 +19,8 @@ public class StandardBullet : MonoBehaviour {
      void OnCollisionEnter(Collision collision)
     {
         var hit = collision.gameObject;
-        var health = hit.GetComponent<PlayerHealth>();
-        var enemyHealth = hit.GetComponent<EnemyAi>();
+        PlayerHealth health = hit.GetComponent<PlayerHealth>();
+        EnemyAi enemyHealth = hit.GetComponent<EnemyAi>();
         if (health != null)
         {
             health.TakeDamage(10);

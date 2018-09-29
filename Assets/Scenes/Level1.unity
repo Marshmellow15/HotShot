@@ -6525,16 +6525,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114248788425842502, guid: c6e976e47d8ec5c48bafde0625517202,
-        type: 2}
-      propertyPath: ShotText
-      value: 
-      objectReference: {fileID: 17063465}
     - target: {fileID: 114813762843014464, guid: c6e976e47d8ec5c48bafde0625517202,
         type: 2}
       propertyPath: ShotText
       value: 
       objectReference: {fileID: 789682311}
+    - target: {fileID: 114248788425842502, guid: c6e976e47d8ec5c48bafde0625517202,
+        type: 2}
+      propertyPath: ShotText
+      value: 
+      objectReference: {fileID: 17063465}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c6e976e47d8ec5c48bafde0625517202, type: 2}
   m_IsPrefabParent: 0

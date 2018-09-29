@@ -4,28 +4,28 @@ using UnityEngine;
 
 public class Lightning : MonoBehaviour {
 
-    public ParticleSystem LightningSystem;
-
-    List<ParticleCollisionEvent> collsionEvent;
 
 	public void Start ()
     {
-        collsionEvent = new List<ParticleCollisionEvent>();
+  
+     
     }
 
     void Update()
     {
-        ParticleSystem.MainModule psMain = LightningSystem.main;
+
         
     }
 
     private void OnParticleCollision(GameObject other)
     {
-        ParticlePhysicsExtensions.GetCollisionEvents(LightningSystem, other, collsionEvent);
+        //ParticlePhysicsExtensions.GetCollisionEvents(LightningSystem, other, collsionEvent);
         Debug.Log("Hit enemy");
-        for (int i =0; i < collsionEvent.Count; i++)
+       EnemyAi enemyHealth = other.GetComponent<EnemyAi>();
+
+        if (enemyHealth != null)
         {
-            Debug.Log("Hit enemy");
+            enemyHealth.EnemyTakeDamage(15);
         }
     }
 }

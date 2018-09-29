@@ -55,7 +55,6 @@ GameObject:
   - component: {fileID: 33148341084991784}
   - component: {fileID: 23750169224976194}
   - component: {fileID: 135732015146066886}
-  - component: {fileID: 114863278720262460}
   m_Layer: 0
   m_Name: lightning
   m_TagString: Untagged
@@ -106,6 +105,7 @@ GameObject:
   - component: {fileID: 4616093344371220}
   - component: {fileID: 198221847270783814}
   - component: {fileID: 199154886551255238}
+  - component: {fileID: 114080566882774320}
   m_Layer: 0
   m_Name: Particle System
   m_TagString: Untagged
@@ -124,7 +124,6 @@ GameObject:
   - component: {fileID: 33103856750767346}
   - component: {fileID: 23230756458169652}
   - component: {fileID: 135621601607130318}
-  - component: {fileID: 114040589194087984}
   m_Layer: 0
   m_Name: lightning
   m_TagString: Untagged
@@ -165,6 +164,7 @@ GameObject:
   - component: {fileID: 4021003990065754}
   - component: {fileID: 198034344934738542}
   - component: {fileID: 199258099470502638}
+  - component: {fileID: 114784257778151824}
   m_Layer: 0
   m_Name: Particle System
   m_TagString: Untagged
@@ -546,18 +546,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114040589194087984
+--- !u!114 &114080566882774320
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1618624908243788}
+  m_GameObject: {fileID: 1495196546105082}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6625cf0a892647a40bd2baff5829bee9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LightningSystem: {fileID: 198221847270783814}
 --- !u!114 &114237894441592996
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -594,14 +593,14 @@ MonoBehaviour:
     type: 2}
   lightningSpell: {fileID: 0}
   lightSpell: {fileID: 1282785428514024}
-  WeaponChoiceL: 0
+  WeaponChoiceL: 3
   bulletSpeed: 40
   shotTimerL: 0.5
   maxMana: 40
   maxAmmo: 15
   ShotText: {fileID: 0}
-  currentAmmo: 0
-  currentMana: 0
+  currentAmmo: 15
+  currentMana: 40
   reloadTime: 1
   firePoint: {fileID: 4114840521131166}
 --- !u!114 &114679730320071394
@@ -616,11 +615,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingHealth: 12
-  currentHealth: 0
+  currentHealth: 12
   shootleft: {fileID: 114248788425842502}
   shootRight: {fileID: 114813762843014464}
   movement: {fileID: 114237894441592996}
   player: {fileID: 1652004366577786}
+--- !u!114 &114784257778151824
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1763050949457124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6625cf0a892647a40bd2baff5829bee9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114813762843014464
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -638,28 +648,16 @@ MonoBehaviour:
     type: 2}
   lightningSpell: {fileID: 0}
   lightSpell: {fileID: 1618624908243788}
-  WeaponChoiceR: 0
+  WeaponChoiceR: 6
   bulletSpeed: 40
   maxMana: 40
   maxAmmo: 15
-  currentAmmo: 0
-  currentMana: 0
+  currentAmmo: 15
+  currentMana: 40
   reloadTime: 1
   ShotText: {fileID: 0}
   shotTimerR: 0.5
   firePoint: {fileID: 4647566942129824}
---- !u!114 &114863278720262460
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1282785428514024}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6625cf0a892647a40bd2baff5829bee9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  LightningSystem: {fileID: 198034344934738542}
 --- !u!135 &135621601607130318
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -776,7 +774,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 2
+      scalar: 1.2
       minScalar: 0.0001
       maxCurve:
         serializedVersion: 2
@@ -5239,7 +5237,7 @@ ParticleSystem:
   simulationSpeed: 1
   stopAction: 2
   looping: 1
-  prewarm: 1
+  prewarm: 0
   playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 1
@@ -5307,7 +5305,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 2
+      scalar: 1.5
       minScalar: 0.0001
       maxCurve:
         serializedVersion: 2
@@ -5851,11 +5849,11 @@ ParticleSystem:
   ShapeModule:
     serializedVersion: 5
     enabled: 1
-    type: 4
+    type: 0
     angle: 25
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
-    radiusThickness: 0.01
+    radiusThickness: 1
     donutRadius: 0.2
     m_Position: {x: 0, y: 0, z: 0}
     m_Rotation: {x: 0, y: 0, z: 0}

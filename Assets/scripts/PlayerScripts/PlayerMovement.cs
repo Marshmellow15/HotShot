@@ -30,11 +30,11 @@ public class PlayerMovement : MonoBehaviour {
 	}
 
 
-    void Update()
+    void FixedUpdate()
     {
         Movement();
         Rotation();
-        
+        Evasion();
         //Right Hand shooting
         if (Input.GetMouseButtonDown(1))
         {
@@ -74,7 +74,7 @@ public class PlayerMovement : MonoBehaviour {
             _movement.Normalize();
         }
         transform.Translate(_movement * moveSpeed * Time.deltaTime, Space.World);
-        Evasion();
+       
     }
     void Rotation()
     {
@@ -108,7 +108,7 @@ public class PlayerMovement : MonoBehaviour {
         {
             evading = false;
         }
-
+      
     }
 
 
