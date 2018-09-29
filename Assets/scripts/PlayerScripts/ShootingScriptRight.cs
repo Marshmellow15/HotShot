@@ -103,10 +103,10 @@ public class ShootingScriptRight : MonoBehaviour {
                 shotCounterR = shotTimerR;
                 Fireball newFireballSpell = Instantiate(fireballSpell, firePoint.position, firePoint.rotation) as Fireball;
                 newFireballSpell.speed = bulletSpeed;
-                currentMana -= 8;
-                }
-                
+               
             }
+                
+        }
 
         else
         {

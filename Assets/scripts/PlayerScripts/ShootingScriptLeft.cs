@@ -99,7 +99,7 @@ public class ShootingScriptLeft : MonoBehaviour {
                     shotCounterL = shotTimerL;
                     Fireball newFireballSpell = Instantiate(fireballSpell, firePoint.position, firePoint.rotation) as Fireball;
                     newFireballSpell.speed = bulletSpeed;
-                    currentMana -= 8;
+                   
                 }
             }
 
