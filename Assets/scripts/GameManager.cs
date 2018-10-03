@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour {
 
     public PlayerHealth health;
-    public float restartDelay = 5f;
+    public float restartDelay = 3f;
 
     Animator anim;
     float restartTimer;
@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour {
             {
                 // .. then reload the currently loaded level.
 
-                SceneManager.LoadScene("Level1", LoadSceneMode.Single);
+                SceneManager.LoadScene("LoadOut", LoadSceneMode.Single);
             }
         }
     }
