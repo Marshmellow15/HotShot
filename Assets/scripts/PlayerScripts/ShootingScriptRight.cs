@@ -42,7 +42,7 @@ public class ShootingScriptRight : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update () {
+    void FixedUpdate () {
         LoadoutSettings loadoutSettings = LoadoutSettings.instance;
         if (loadoutSettings)
         {
@@ -75,7 +75,7 @@ public class ShootingScriptRight : MonoBehaviour {
     {
         if (isFiringRight)
         {
-            shotCounterR -= Time.deltaTime;
+            shotCounterR -= Time.fixedDeltaTime;
             if (shotCounterR <= 0)
             {
                 shotCounterR = shotTimerR;
@@ -97,7 +97,7 @@ public class ShootingScriptRight : MonoBehaviour {
     {
         if (isFiringRight && currentMana > 0)
         {
-            shotCounterR -= Time.deltaTime;
+            shotCounterR -= Time.fixedDeltaTime;
             if (shotCounterR <= 0)
             {
                 shotCounterR = shotTimerR;
@@ -123,7 +123,7 @@ public class ShootingScriptRight : MonoBehaviour {
     {
         if (isFiringRight)
         {
-            shotCounterR -= Time.deltaTime;
+            shotCounterR -= Time.fixedDeltaTime;
                 if (shotCounterR <= 0)
                 {
                     shotCounterR = shotTimerR;
