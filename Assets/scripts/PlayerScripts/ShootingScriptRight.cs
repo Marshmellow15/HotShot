@@ -31,6 +31,11 @@ public class ShootingScriptRight : MonoBehaviour {
     public Transform firePointSmgR;
     public Transform firePointPistolR;
 
+    public GameObject ShotgunR;
+    public GameObject PistolR;
+    public GameObject SmgR;
+    
+
     void Start ()
     {
         currentAmmo = maxAmmo;
@@ -63,6 +68,36 @@ public class ShootingScriptRight : MonoBehaviour {
             if (Input.GetKeyDown(KeyCode.Keypad8))
                 WeaponChoiceR = 8;
         }
+
+
+        //pistol
+        if (WeaponChoiceR == 4)
+        {
+            PistolR.SetActive(true);
+            ShotgunR.SetActive(false);
+            SmgR.SetActive(false);
+        }
+        //shotgun
+        else if (WeaponChoiceR == 8)
+        {
+            PistolR.SetActive(false);
+            ShotgunR.SetActive(true);
+            SmgR.SetActive(false);
+        }
+        //smg
+        else if (WeaponChoiceR == 7)
+        {
+            PistolR.SetActive(false);
+            ShotgunR.SetActive(false);
+            SmgR.SetActive(true);
+        }
+        else
+        {
+            PistolR.SetActive(false);
+            ShotgunR.SetActive(false);
+            SmgR.SetActive(false);
+        }
+
 
         if (isReloading)
             return;

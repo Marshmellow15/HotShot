@@ -30,13 +30,15 @@ public class ShootingScriptLeft : MonoBehaviour {
     public Transform firePointShotgunL;
     public Transform firePointSmgL;
     public Transform firePointPistolL;
- 
+
+    public GameObject ShotgunL;
+    public GameObject PistolL;
+    public GameObject SmgL;
+
     void Start()
     {
         currentAmmo = maxAmmo;
         currentMana = maxMana;
-
-       
     }
 
     // Update is called once per frame
@@ -61,6 +63,35 @@ public class ShootingScriptLeft : MonoBehaviour {
             if (Input.GetKeyDown(KeyCode.Keypad8))
                 WeaponChoiceL = 8;
         }
+
+        //pistol
+        if (WeaponChoiceL == 1)
+        {
+            PistolL.SetActive(true);
+            ShotgunL.SetActive(false);
+            SmgL.SetActive(false);
+        }
+        //shotgun
+        else if (WeaponChoiceL == 8)
+        {
+            ShotgunL.SetActive(true);
+            SmgL.SetActive(false);
+            PistolL.SetActive(false);
+        }
+        //smg
+        else if (WeaponChoiceL == 7)
+        { 
+            SmgL.SetActive(true);
+            ShotgunL.SetActive(false);
+            PistolL.SetActive(false);
+        }
+        else
+        {
+            PistolL.SetActive(false);
+            ShotgunL.SetActive(false);
+            SmgL.SetActive(false);
+        }
+
 
         if (isReloading)
             return;
@@ -93,7 +124,6 @@ public class ShootingScriptLeft : MonoBehaviour {
         if (WeaponChoiceL == 1)
         {
             maxAmmo = 25;
-            currentAmmo = maxAmmo;
             if (isFiringLeft)
             {
                 shotCounterL -= Time.fixedDeltaTime;
