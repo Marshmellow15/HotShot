@@ -29,7 +29,7 @@ public class StandardBullet : MonoBehaviour {
         {
             enemyHealth.EnemyTakeDamage(15);
         }
-        if (!hit.CompareTag("bullet"))
+        if (!hit.CompareTag("bullet")||!hit.CompareTag("fireball"))
         {
             Destroy(gameObject);
         }

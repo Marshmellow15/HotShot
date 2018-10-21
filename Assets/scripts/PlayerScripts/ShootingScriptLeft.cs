@@ -26,9 +26,11 @@ public class ShootingScriptLeft : MonoBehaviour {
     public float reloadTime = 1f;
     private bool isReloading = false;
 
-    public Transform firePoint;
-
-
+    public Transform firePointSpells;
+    public Transform firePointShotgunL;
+    public Transform firePointSmgL;
+    public Transform firePointPistolL;
+ 
     void Start()
     {
         currentAmmo = maxAmmo;
@@ -54,6 +56,10 @@ public class ShootingScriptLeft : MonoBehaviour {
                 WeaponChoiceL = 2;
             if (Input.GetKeyDown(KeyCode.Keypad3))
                 WeaponChoiceL = 3;
+            if (Input.GetKeyDown(KeyCode.Keypad7))
+                WeaponChoiceL = 7;
+            if (Input.GetKeyDown(KeyCode.Keypad8))
+                WeaponChoiceL = 8;
         }
 
         if (isReloading)
@@ -67,16 +73,34 @@ public class ShootingScriptLeft : MonoBehaviour {
 
         //UI ammo Counter
         ShotText.text = currentAmmo + "/" + maxAmmo;
+        Pistol();
+        Lightning();
+        Fireball();
+        Shotgun();
+        Smg();
+    }
+    IEnumerator Reload()
+    {
+        isReloading = true;
+        yield return new WaitForSeconds(reloadTime);
+        currentAmmo = maxAmmo;
+        isReloading = false;
+    }
+
+    public void Pistol()
+    {
         //StandardBullets
         if (WeaponChoiceL == 1)
         {
+            maxAmmo = 25;
+            currentAmmo = maxAmmo;
             if (isFiringLeft)
             {
                 shotCounterL -= Time.fixedDeltaTime;
                 if (shotCounterL <= 0)
                 {
                     shotCounterL = shotTimerL;
-                    StandardBullet newBullet = Instantiate(bullet, firePoint.position, firePoint.rotation) as StandardBullet;
+                    StandardBullet newBullet = Instantiate(bullet, firePointPistolL.position, firePointPistolL.rotation) as StandardBullet;
                     newBullet.speed = bulletSpeed;
                     currentAmmo -= 1;
                 }
@@ -88,6 +112,72 @@ public class ShootingScriptLeft : MonoBehaviour {
 
             }
         }
+    }
+
+    public void Smg()
+    {
+        //StandardBullets
+        if (WeaponChoiceL == 7)
+        {
+            maxAmmo = 25;
+            currentAmmo = maxAmmo;
+            if (isFiringLeft)
+            {
+                shotCounterL -= .2f;
+                if (shotCounterL <= 0)
+                {
+                    shotCounterL = shotTimerL;
+                    StandardBullet newBullet = Instantiate(bullet, firePointSmgL.position, firePointSmgL.rotation) as StandardBullet;
+                    newBullet.speed = bulletSpeed;
+                    currentAmmo -= 1;
+                }
+            }
+
+            else
+            {
+                shotCounterL = 0;
+
+            }
+        }
+    }
+
+    public void Shotgun()
+    {
+        float spread = 0.02f;
+        //StandardBullets
+        if (WeaponChoiceL == 8)
+        {
+            if (isFiringLeft)
+            {
+                shotCounterL -= Time.fixedDeltaTime;
+                if (shotCounterL <= 0)
+                {
+                    var Pellet = firePointShotgunL.rotation;
+                    Pellet.x += Random.Range(-spread, spread);
+                    Pellet.y += Random.Range(-spread, spread);
+                    shotCounterL = shotTimerL;
+                    StandardBullet newBullet0 = Instantiate(bullet, firePointShotgunL.position, Pellet) as StandardBullet;
+                    StandardBullet newBullet1 = Instantiate(bullet, firePointShotgunL.position, Pellet) as StandardBullet;
+                    StandardBullet newBullet2 = Instantiate(bullet, firePointShotgunL.position, Pellet) as StandardBullet;
+                    StandardBullet newBullet3 = Instantiate(bullet, firePointShotgunL.position, Pellet) as StandardBullet;
+                    newBullet0.speed = bulletSpeed;
+                    newBullet1.speed = bulletSpeed;
+                    newBullet2.speed = bulletSpeed;
+                    newBullet3.speed = bulletSpeed;
+                    currentAmmo -= 1;
+                }
+            }
+
+            else
+            {
+                shotCounterL = 0;
+
+            }
+        }
+    }
+
+    public void Fireball()
+    {
         //FireBall spell
         if (WeaponChoiceL == 2)
         {
@@ -97,9 +187,9 @@ public class ShootingScriptLeft : MonoBehaviour {
                 if (shotCounterL <= 0)
                 {
                     shotCounterL = shotTimerL;
-                    Fireball newFireballSpell = Instantiate(fireballSpell, firePoint.position, firePoint.rotation) as Fireball;
+                    Fireball newFireballSpell = Instantiate(fireballSpell, firePointSpells.position, firePointSpells.rotation) as Fireball;
                     newFireballSpell.speed = bulletSpeed;
-                   
+
                 }
             }
 
@@ -113,6 +203,9 @@ public class ShootingScriptLeft : MonoBehaviour {
         {
             currentMana = 0;
         }
+    }
+    public void Lightning()
+    {
         //Lightning spell
         if (WeaponChoiceL == 3)
         {
@@ -125,8 +218,8 @@ public class ShootingScriptLeft : MonoBehaviour {
                     lightSpell.SetActive(true);
 
                 }
-              
-                
+
+
             }
 
             else
@@ -135,16 +228,8 @@ public class ShootingScriptLeft : MonoBehaviour {
                 lightSpell.SetActive(false);
             }
         }
-
-
-
-
     }
-    IEnumerator Reload()
-    {
-        isReloading = true;
-        yield return new WaitForSeconds(reloadTime);
-        currentAmmo = maxAmmo;
-        isReloading = false;
-    }
+
+
+
 }

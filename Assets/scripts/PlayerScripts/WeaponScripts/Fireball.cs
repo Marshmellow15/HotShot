@@ -29,7 +29,8 @@ public class Fireball : MonoBehaviour {
         {
             enemyHealth.EnemyTakeDamage(15);
         }
-        Destroy(gameObject);
+        if (!hit.CompareTag("bullet") || !hit.CompareTag("fireball"))
+            Destroy(gameObject);
     }
     void DestroyObjectDelayed()
     {
