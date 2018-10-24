@@ -847,6 +847,21 @@ Prefab:
       propertyPath: ShotText
       value: 
       objectReference: {fileID: 789682311}
+    - target: {fileID: 114248788425842502, guid: c6e976e47d8ec5c48bafde0625517202,
+        type: 2}
+      propertyPath: ShotCounterRight
+      value: 
+      objectReference: {fileID: 789682309}
+    - target: {fileID: 114248788425842502, guid: c6e976e47d8ec5c48bafde0625517202,
+        type: 2}
+      propertyPath: ShotCounterLeft
+      value: 
+      objectReference: {fileID: 17063463}
+    - target: {fileID: 114813762843014464, guid: c6e976e47d8ec5c48bafde0625517202,
+        type: 2}
+      propertyPath: ShotCounterRight
+      value: 
+      objectReference: {fileID: 789682309}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c6e976e47d8ec5c48bafde0625517202, type: 2}
   m_IsPrefabParent: 0

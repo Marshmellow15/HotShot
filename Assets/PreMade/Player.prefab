@@ -5820,7 +5820,7 @@ MonoBehaviour:
   WeaponChoiceL: 3
   bulletSpeed: 40
   shotTimerL: 0.5
-  maxMana: 40
+  maxMana: 100
   maxAmmo: 15
   ShotText: {fileID: 0}
   currentAmmo: 15
@@ -5833,6 +5833,7 @@ MonoBehaviour:
   ShotgunL: {fileID: 1731663172553690}
   PistolL: {fileID: 1893398839859744}
   SmgL: {fileID: 1853799708153492}
+  ki: 8
 --- !u!114 &114679730320071394
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5880,7 +5881,7 @@ MonoBehaviour:
   lightSpell: {fileID: 1618624908243788}
   WeaponChoiceR: 6
   bulletSpeed: 40
-  maxMana: 40
+  maxMana: 100
   maxAmmo: 15
   currentAmmo: 15
   currentMana: 40
@@ -5894,6 +5895,7 @@ MonoBehaviour:
   ShotgunR: {fileID: 1374944577988362}
   PistolR: {fileID: 1597306594772942}
   SmgR: {fileID: 1835263373015680}
+  ki: 15
 --- !u!135 &135621601607130318
 SphereCollider:
   m_ObjectHideFlags: 1

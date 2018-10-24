@@ -17,12 +17,13 @@ public class ShootingScriptLeft : MonoBehaviour {
     public float shotTimerL;
     private float shotCounterL;
 
-    public int maxMana = 40;
+    public int maxMana = 100;
     public int maxAmmo = 15;
     public Text ShotText;
-
+    
+    public GameObject ShotCounterLeft;
     public int currentAmmo;
-    public int currentMana;
+    public float currentMana;
     public float reloadTime = 1f;
     private bool isReloading = false;
 
@@ -34,6 +35,8 @@ public class ShootingScriptLeft : MonoBehaviour {
     public GameObject ShotgunL;
     public GameObject PistolL;
     public GameObject SmgL;
+
+    public float ki = 15f;
 
     void Start()
     {
@@ -67,26 +70,33 @@ public class ShootingScriptLeft : MonoBehaviour {
         //pistol
         if (WeaponChoiceL == 1)
         {
+            maxAmmo = 8;
             PistolL.SetActive(true);
             ShotgunL.SetActive(false);
             SmgL.SetActive(false);
+            ShotCounterLeft.SetActive(true);
         }
         //shotgun
         else if (WeaponChoiceL == 8)
         {
+            maxAmmo = 3;
             ShotgunL.SetActive(true);
             SmgL.SetActive(false);
             PistolL.SetActive(false);
+            ShotCounterLeft.SetActive(true);
         }
         //smg
         else if (WeaponChoiceL == 7)
-        { 
+        {
+            maxAmmo = 15;
             SmgL.SetActive(true);
             ShotgunL.SetActive(false);
             PistolL.SetActive(false);
+            ShotCounterLeft.SetActive(true);
         }
         else
         {
+            ShotCounterLeft.SetActive(false);
             PistolL.SetActive(false);
             ShotgunL.SetActive(false);
             SmgL.SetActive(false);
@@ -101,7 +111,7 @@ public class ShootingScriptLeft : MonoBehaviour {
             StartCoroutine(Reload());
             return;
         }
-
+        ManaSystem();
         //UI ammo Counter
         ShotText.text = currentAmmo + "/" + maxAmmo;
         Pistol();
@@ -117,9 +127,27 @@ public class ShootingScriptLeft : MonoBehaviour {
         currentAmmo = maxAmmo;
         isReloading = false;
     }
+    public void ManaSystem()
+    {
+        
+        if (currentMana <= 0)
+        {
+            currentMana = 0;
+        }
+        else if(currentMana >= maxMana)
+        {
+            currentMana = maxMana;
+        }
+        if(currentMana < maxMana)
+        {
+            currentMana += ki * Time.fixedDeltaTime;
+        }
+
+    }
 
     public void Pistol()
     {
+        maxAmmo = 8;
         //StandardBullets
         if (WeaponChoiceL == 1)
         {
@@ -146,6 +174,7 @@ public class ShootingScriptLeft : MonoBehaviour {
 
     public void Smg()
     {
+        maxAmmo = 15;
         //StandardBullets
         if (WeaponChoiceL == 7)
         {
@@ -176,6 +205,7 @@ public class ShootingScriptLeft : MonoBehaviour {
 
     public void Shotgun()
     {
+        maxAmmo = 3;
         float spread = 0.02f;
         int count = 1;
         int i = 0;
@@ -210,18 +240,19 @@ public class ShootingScriptLeft : MonoBehaviour {
 
     public void Fireball()
     {
+        int ManaCost = 12;
         //FireBall spell
         if (WeaponChoiceL == 2)
         {
-            if (isFiringLeft && currentMana > 0)
+            if (isFiringLeft && currentMana > ManaCost )
             {
-                shotCounterL -= Time.fixedDeltaTime;
+                
                 if (shotCounterL <= 0)
                 {
                     shotCounterL = shotTimerL;
                     Fireball newFireballSpell = Instantiate(fireballSpell, firePointSpells.position, firePointSpells.rotation) as Fireball;
                     newFireballSpell.speed = bulletSpeed;
-
+                    currentMana -= ManaCost;
                 }
             }
 
@@ -231,32 +262,24 @@ public class ShootingScriptLeft : MonoBehaviour {
 
             }
         }
-        if (currentMana <= 0)
-        {
-            currentMana = 0;
-        }
+
     }
     public void Lightning()
     {
+        int ManaCost = 8;
         //Lightning spell
         if (WeaponChoiceL == 3)
         {
-            if (isFiringLeft)
+            if (isFiringLeft && currentMana > ManaCost)
             {
                 shotCounterL -= Time.fixedDeltaTime;
-                if (shotCounterL <= 0)
-                {
-                    shotCounterL = shotTimerL;
+ 
                     lightSpell.SetActive(true);
-
-                }
-
-
+                    currentMana -= ManaCost;
             }
 
             else
             {
-                shotCounterL = 0;
                 lightSpell.SetActive(false);
             }
         }
