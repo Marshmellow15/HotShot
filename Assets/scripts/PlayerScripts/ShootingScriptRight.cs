@@ -153,23 +153,27 @@ public class ShootingScriptRight : MonoBehaviour {
     public void Shotgun()
     {
         float spread = .2f;
-        int count = 4;
+        int count = 1;
+        int i = 0;
         if (WeaponChoiceR == 8)
         {
             if (isFiringRight)
             {
-                shotCounterR -= Time.fixedDeltaTime;
                 if (shotCounterR <= 0)
                 {
                     var Pellet = firePointShotgunR.rotation;
                     Pellet.x += Random.Range(-spread, spread);
                     Pellet.y += Random.Range(-spread, spread);
                     shotCounterR = shotTimerR;
-                    Debug.Log("BOOM");
-                    for (int i = 0; i < count; i++)
+                    while(i < count)
                     {
-                        StandardBullet newBullet = Instantiate(bullet, firePointShotgunR.position, Pellet) as StandardBullet;
-                        newBullet.speed = bulletSpeed;
+                        i++;
+                        StandardBullet newBullet1 = Instantiate(bullet, firePointShotgunR.position, Pellet) as StandardBullet;
+                        StandardBullet newBullet2 = Instantiate(bullet, firePointShotgunR.position, Pellet) as StandardBullet;
+                        StandardBullet newBullet3 = Instantiate(bullet, firePointShotgunR.position, Pellet) as StandardBullet;
+                        newBullet1.speed = bulletSpeed;
+                        newBullet2.speed = bulletSpeed;
+                        newBullet2.speed = bulletSpeed;
                     }
                     currentAmmo -= 1;
                 }
@@ -185,28 +189,35 @@ public class ShootingScriptRight : MonoBehaviour {
     }
     public void Smg()
     {
-    if (WeaponChoiceR == 7)
-    {
-        if (isFiringRight)
+        if (WeaponChoiceR == 7)
         {
-            shotCounterR -= .2f ;
-            if (shotCounterR <= 0)
+            float spread = .2f;
+            if (isFiringRight)
             {
-                shotCounterR = shotTimerR;
-                StandardBullet newBullet = Instantiate(bullet, firePointSmgR.position, firePointSmgR.rotation) as StandardBullet;
-                newBullet.speed = bulletSpeed;
-                currentAmmo -= 1;
+                shotCounterR -= .2f;
+                if (shotCounterR <= 0)
+                {
+                    if (shotCounterR <= 0)
+                    {
+                        var Pellet = firePointSmgR.rotation;
+                        Pellet.x += Random.Range(-spread, spread);
+                        Pellet.y += Random.Range(-spread, spread);
+                        shotCounterR = shotTimerR;
+                        StandardBullet newBullet = Instantiate(bullet, firePointSmgR.position, Pellet) as StandardBullet;
+                        newBullet.speed = bulletSpeed;
+                        currentAmmo -= 1;
+                    }
+
+                }
+
+                else
+                {
+                    shotCounterR = 0;
+
+                }
             }
-
-        }
-
-        else
-        {
-            shotCounterR = 0;
-
         }
     }
-}
     
     public void Fireball()
     {

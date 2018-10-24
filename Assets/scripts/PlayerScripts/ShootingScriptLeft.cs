@@ -149,16 +149,19 @@ public class ShootingScriptLeft : MonoBehaviour {
         //StandardBullets
         if (WeaponChoiceL == 7)
         {
-            maxAmmo = 25;
-            currentAmmo = maxAmmo;
+            float spread = 0.2f;
             if (isFiringLeft)
             {
                 shotCounterL -= .2f;
                 if (shotCounterL <= 0)
                 {
                     shotCounterL = shotTimerL;
-                    StandardBullet newBullet = Instantiate(bullet, firePointSmgL.position, firePointSmgL.rotation) as StandardBullet;
-                    newBullet.speed = bulletSpeed;
+                    var Pellet = firePointSmgL.rotation;
+                    Pellet.x += Random.Range(-spread, spread);
+                    Pellet.y += Random.Range(-spread, spread);
+                    shotCounterL = shotTimerL;
+                    StandardBullet newBullet0 = Instantiate(bullet, firePointSmgL.position, Pellet) as StandardBullet;
+                    newBullet0.speed = bulletSpeed;
                     currentAmmo -= 1;
                 }
             }
@@ -174,7 +177,8 @@ public class ShootingScriptLeft : MonoBehaviour {
     public void Shotgun()
     {
         float spread = 0.02f;
-        //StandardBullets
+        int count = 1;
+        int i = 0;
         if (WeaponChoiceL == 8)
         {
             if (isFiringLeft)
@@ -186,14 +190,12 @@ public class ShootingScriptLeft : MonoBehaviour {
                     Pellet.x += Random.Range(-spread, spread);
                     Pellet.y += Random.Range(-spread, spread);
                     shotCounterL = shotTimerL;
-                    StandardBullet newBullet0 = Instantiate(bullet, firePointShotgunL.position, Pellet) as StandardBullet;
-                    StandardBullet newBullet1 = Instantiate(bullet, firePointShotgunL.position, Pellet) as StandardBullet;
-                    StandardBullet newBullet2 = Instantiate(bullet, firePointShotgunL.position, Pellet) as StandardBullet;
-                    StandardBullet newBullet3 = Instantiate(bullet, firePointShotgunL.position, Pellet) as StandardBullet;
-                    newBullet0.speed = bulletSpeed;
-                    newBullet1.speed = bulletSpeed;
-                    newBullet2.speed = bulletSpeed;
-                    newBullet3.speed = bulletSpeed;
+                    while (i < count)
+                    {
+                        i++;
+                        StandardBullet newBullet0 = Instantiate(bullet, firePointShotgunL.position, Pellet) as StandardBullet;
+                        newBullet0.speed = bulletSpeed;
+                    }
                     currentAmmo -= 1;
                 }
             }

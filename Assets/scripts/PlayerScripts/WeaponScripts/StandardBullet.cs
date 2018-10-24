@@ -37,7 +37,7 @@ public class StandardBullet : MonoBehaviour {
     void DestroyObjectDelayed()
     {
 
-        Destroy(gameObject, 2f);
+        Destroy(gameObject, 1f);
     }
    
     }
