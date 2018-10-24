@@ -1,0 +1,218 @@
+fileFormatVersion: 2
+guid: fa046df16c5db314ea9766a40eae745a
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: AKM_LP_Final:Box017
+    100004: AKM_LP_Final:Box018
+    100006: AKM_LP_Final:Box019
+    100008: AKM_LP_Final:Box020
+    100010: AKM_LP_Final:Box021
+    100012: AKM_LP_Final:Box022
+    100014: AKM_LP_Final:Box023
+    100016: AKM_LP_Final:Box024
+    100018: AKM_LP_Final:Box025
+    100020: AKM_LP_Final:Box026
+    100022: AKM_LP_Final:Box027
+    100024: AKM_LP_Final:Circle003
+    100026: AKM_LP_Final:Circle004
+    100028: AKM_LP_Final:Cylinder033
+    100030: AKM_LP_Final:Cylinder034
+    100032: AKM_LP_Final:Cylinder035
+    100034: AKM_LP_Final:Cylinder036
+    100036: AKM_LP_Final:Cylinder040
+    100038: AKM_LP_Final:Cylinder041
+    100040: AKM_LP_Final:Cylinder042
+    100042: AKM_LP_Final:Object035
+    100044: AKM_LP_Final:Object056
+    100046: AKM_LP_Final:Object065
+    100048: AKM_LP_Final:Object066
+    100050: AKM_LP_Final:Object069
+    100052: AKM_LP_Final:Object071
+    100054: AKM_LP_Final:Object072
+    100056: AKM_LP_Final:Object073
+    100058: AKM_LP_Final:Object074
+    100060: AKM_LP_Final:Object075
+    100062: AKM_LP_Final:Object076
+    100064: AKM_LP_Final:Plane003
+    100066: AKM_LP_Final:transform1
+    100068: AKM_LP_Final:transform10
+    100070: AKM_LP_Final:transform11
+    100072: AKM_LP_Final:transform12
+    100074: AKM_LP_Final:transform13
+    100076: AKM_LP_Final:transform14
+    100078: AKM_LP_Final:transform15
+    100080: AKM_LP_Final:transform16
+    100082: AKM_LP_Final:transform17
+    100084: AKM_LP_Final:transform18
+    100086: AKM_LP_Final:transform19
+    100088: AKM_LP_Final:transform2
+    100090: AKM_LP_Final:transform20
+    100092: AKM_LP_Final:transform21
+    100094: AKM_LP_Final:transform22
+    100096: AKM_LP_Final:transform23
+    100098: AKM_LP_Final:transform24
+    100100: AKM_LP_Final:transform25
+    100102: AKM_LP_Final:transform26
+    100104: AKM_LP_Final:transform27
+    100106: AKM_LP_Final:transform28
+    100108: AKM_LP_Final:transform29
+    100110: AKM_LP_Final:transform3
+    100112: AKM_LP_Final:transform30
+    100114: AKM_LP_Final:transform31
+    100116: AKM_LP_Final:transform4
+    100118: AKM_LP_Final:transform5
+    100120: AKM_LP_Final:transform6
+    100122: AKM_LP_Final:transform7
+    100124: AKM_LP_Final:transform8
+    100126: AKM_LP_Final:transform9
+    400000: //RootNode
+    400002: AKM_LP_Final:Box017
+    400004: AKM_LP_Final:Box018
+    400006: AKM_LP_Final:Box019
+    400008: AKM_LP_Final:Box020
+    400010: AKM_LP_Final:Box021
+    400012: AKM_LP_Final:Box022
+    400014: AKM_LP_Final:Box023
+    400016: AKM_LP_Final:Box024
+    400018: AKM_LP_Final:Box025
+    400020: AKM_LP_Final:Box026
+    400022: AKM_LP_Final:Box027
+    400024: AKM_LP_Final:Circle003
+    400026: AKM_LP_Final:Circle004
+    400028: AKM_LP_Final:Cylinder033
+    400030: AKM_LP_Final:Cylinder034
+    400032: AKM_LP_Final:Cylinder035
+    400034: AKM_LP_Final:Cylinder036
+    400036: AKM_LP_Final:Cylinder040
+    400038: AKM_LP_Final:Cylinder041
+    400040: AKM_LP_Final:Cylinder042
+    400042: AKM_LP_Final:Object035
+    400044: AKM_LP_Final:Object056
+    400046: AKM_LP_Final:Object065
+    400048: AKM_LP_Final:Object066
+    400050: AKM_LP_Final:Object069
+    400052: AKM_LP_Final:Object071
+    400054: AKM_LP_Final:Object072
+    400056: AKM_LP_Final:Object073
+    400058: AKM_LP_Final:Object074
+    400060: AKM_LP_Final:Object075
+    400062: AKM_LP_Final:Object076
+    400064: AKM_LP_Final:Plane003
+    400066: AKM_LP_Final:transform1
+    400068: AKM_LP_Final:transform10
+    400070: AKM_LP_Final:transform11
+    400072: AKM_LP_Final:transform12
+    400074: AKM_LP_Final:transform13
+    400076: AKM_LP_Final:transform14
+    400078: AKM_LP_Final:transform15
+    400080: AKM_LP_Final:transform16
+    400082: AKM_LP_Final:transform17
+    400084: AKM_LP_Final:transform18
+    400086: AKM_LP_Final:transform19
+    400088: AKM_LP_Final:transform2
+    400090: AKM_LP_Final:transform20
+    400092: AKM_LP_Final:transform21
+    400094: AKM_LP_Final:transform22
+    400096: AKM_LP_Final:transform23
+    400098: AKM_LP_Final:transform24
+    400100: AKM_LP_Final:transform25
+    400102: AKM_LP_Final:transform26
+    400104: AKM_LP_Final:transform27
+    400106: AKM_LP_Final:transform28
+    400108: AKM_LP_Final:transform29
+    400110: AKM_LP_Final:transform3
+    400112: AKM_LP_Final:transform30
+    400114: AKM_LP_Final:transform31
+    400116: AKM_LP_Final:transform4
+    400118: AKM_LP_Final:transform5
+    400120: AKM_LP_Final:transform6
+    400122: AKM_LP_Final:transform7
+    400124: AKM_LP_Final:transform8
+    400126: AKM_LP_Final:transform9
+    2100000: lambert1
+    2300000: AKM_LP_Final:Box027
+    3300000: AKM_LP_Final:Box027
+    4300000: AKM_LP_Final:Box027
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.5
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
