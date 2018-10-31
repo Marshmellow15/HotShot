@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 33202904743246388}
   - component: {fileID: 23746306384076298}
   - component: {fileID: 54911942277616228}
+  - component: {fileID: 136602805505449384}
   m_Layer: 0
   m_Name: ShotgunShell_fbx
   m_TagString: Untagged
@@ -36,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1741899847945088}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 0.66694266, y: 1.28, z: 2.34}
+  m_LocalPosition: {x: -34.68, y: 3.02, z: -4.87}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
   m_Father: {fileID: 0}
@@ -99,3 +100,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!136 &136602805505449384
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1741899847945088}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.00043425217
+  m_Height: 0.0022324147
+  m_Direction: 1
+  m_Center: {x: -4.3655746e-11, y: -0.0006016783, z: -7.275956e-11}

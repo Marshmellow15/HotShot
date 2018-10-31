@@ -8,9 +8,12 @@ public class ShootingScriptLeft : MonoBehaviour {
     public bool isFiringLeft;
 
     public StandardBullet bullet;
+    public StandardBullet SmgBullet;
+    public StandardBullet pellet;
+
     public Fireball fireballSpell;
-    public Lightning lightningSpell;
     public GameObject lightSpell;
+
     public int WeaponChoiceL;
     public float bulletSpeed;
 
@@ -20,8 +23,10 @@ public class ShootingScriptLeft : MonoBehaviour {
     public int maxMana = 100;
     public int maxAmmo = 15;
     public Text ShotText;
-    
+    public GameObject ManaLeft;
+
     public GameObject ShotCounterLeft;
+    public  Slider ManaCounterLeft;
     public int currentAmmo;
     public float currentMana;
     public float reloadTime = 1f;
@@ -36,7 +41,7 @@ public class ShootingScriptLeft : MonoBehaviour {
     public GameObject PistolL;
     public GameObject SmgL;
 
-    public float ki = 15f;
+    public float ki = 20f;
 
     void Start()
     {
@@ -75,6 +80,7 @@ public class ShootingScriptLeft : MonoBehaviour {
             ShotgunL.SetActive(false);
             SmgL.SetActive(false);
             ShotCounterLeft.SetActive(true);
+            ManaLeft.SetActive(false);
         }
         //shotgun
         else if (WeaponChoiceL == 8)
@@ -84,6 +90,7 @@ public class ShootingScriptLeft : MonoBehaviour {
             SmgL.SetActive(false);
             PistolL.SetActive(false);
             ShotCounterLeft.SetActive(true);
+            ManaLeft.SetActive(false);
         }
         //smg
         else if (WeaponChoiceL == 7)
@@ -93,6 +100,7 @@ public class ShootingScriptLeft : MonoBehaviour {
             ShotgunL.SetActive(false);
             PistolL.SetActive(false);
             ShotCounterLeft.SetActive(true);
+            ManaLeft.SetActive(false);
         }
         else
         {
@@ -100,9 +108,8 @@ public class ShootingScriptLeft : MonoBehaviour {
             PistolL.SetActive(false);
             ShotgunL.SetActive(false);
             SmgL.SetActive(false);
+            ManaLeft.SetActive(true);
         }
-
-
         if (isReloading)
             return;
 
@@ -112,7 +119,8 @@ public class ShootingScriptLeft : MonoBehaviour {
             return;
         }
         ManaSystem();
-        //UI ammo Counter
+        //UI ammo Counter.
+        ManaCounterLeft.value = currentMana;
         ShotText.text = currentAmmo + "/" + maxAmmo;
         Pistol();
         Lightning();
@@ -147,7 +155,7 @@ public class ShootingScriptLeft : MonoBehaviour {
 
     public void Pistol()
     {
-        maxAmmo = 8;
+
         //StandardBullets
         if (WeaponChoiceL == 1)
         {
@@ -174,7 +182,7 @@ public class ShootingScriptLeft : MonoBehaviour {
 
     public void Smg()
     {
-        maxAmmo = 15;
+        
         //StandardBullets
         if (WeaponChoiceL == 7)
         {
@@ -189,7 +197,7 @@ public class ShootingScriptLeft : MonoBehaviour {
                     Pellet.x += Random.Range(-spread, spread);
                     Pellet.y += Random.Range(-spread, spread);
                     shotCounterL = shotTimerL;
-                    StandardBullet newBullet0 = Instantiate(bullet, firePointSmgL.position, Pellet) as StandardBullet;
+                    StandardBullet newBullet0 = Instantiate(SmgBullet, firePointSmgL.position, Pellet) as StandardBullet;
                     newBullet0.speed = bulletSpeed;
                     currentAmmo -= 1;
                 }
@@ -205,9 +213,9 @@ public class ShootingScriptLeft : MonoBehaviour {
 
     public void Shotgun()
     {
-        maxAmmo = 3;
+       
         float spread = 0.02f;
-        int count = 1;
+        int count = 4;
         int i = 0;
         if (WeaponChoiceL == 8)
         {
@@ -216,15 +224,16 @@ public class ShootingScriptLeft : MonoBehaviour {
                 shotCounterL -= Time.fixedDeltaTime;
                 if (shotCounterL <= 0)
                 {
-                    var Pellet = firePointShotgunL.rotation;
-                    Pellet.x += Random.Range(-spread, spread);
-                    Pellet.y += Random.Range(-spread, spread);
+                  
                     shotCounterL = shotTimerL;
                     while (i < count)
                     {
-                        i++;
-                        StandardBullet newBullet0 = Instantiate(bullet, firePointShotgunL.position, Pellet) as StandardBullet;
+                        var Pellet = firePointShotgunL.rotation;
+                        Pellet.x += Random.Range(-spread, spread);
+                        Pellet.y += Random.Range(-spread, spread);
+                        StandardBullet newBullet0 = Instantiate(pellet, firePointShotgunL.position, Pellet) as StandardBullet;
                         newBullet0.speed = bulletSpeed;
+                        i++;
                     }
                     currentAmmo -= 1;
                 }
@@ -240,7 +249,7 @@ public class ShootingScriptLeft : MonoBehaviour {
 
     public void Fireball()
     {
-        int ManaCost = 12;
+        int ManaCost = 8;
         //FireBall spell
         if (WeaponChoiceL == 2)
         {
@@ -266,16 +275,15 @@ public class ShootingScriptLeft : MonoBehaviour {
     }
     public void Lightning()
     {
-        int ManaCost = 8;
+        int ManaCost = 2;
         //Lightning spell
         if (WeaponChoiceL == 3)
         {
             if (isFiringLeft && currentMana > ManaCost)
             {
                 shotCounterL -= Time.fixedDeltaTime;
- 
-                    lightSpell.SetActive(true);
-                    currentMana -= ManaCost;
+                lightSpell.SetActive(true);
+                currentMana -= ManaCost;
             }
 
             else

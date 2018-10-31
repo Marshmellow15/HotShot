@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour {
             {
                 // .. then reload the currently loaded level.
 
-                SceneManager.LoadScene("LoadOut", LoadSceneMode.Single);
+                SceneManager.LoadScene("Menu", LoadSceneMode.Single);
             }
         }
     }

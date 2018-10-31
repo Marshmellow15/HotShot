@@ -8,8 +8,9 @@ public class ShootingScriptRight : MonoBehaviour {
     public bool isFiringRight;
 
     public StandardBullet bullet;
+    public StandardBullet smgBullet;
+    public StandardBullet Pellet;
     public Fireball fireballSpell;
-    public Lightning lightningSpell;
     public GameObject lightSpell;
     public int WeaponChoiceR;
     public float bulletSpeed;
@@ -26,6 +27,8 @@ public class ShootingScriptRight : MonoBehaviour {
     public Text ShotText;
     public float shotTimerR;
     private float shotCounterR;
+    public Slider ManaCounterRight;
+    public GameObject ManaRight;
 
     public Transform firePointSpells;
     public Transform firePointShotgunR;
@@ -36,7 +39,7 @@ public class ShootingScriptRight : MonoBehaviour {
     public GameObject PistolR;
     public GameObject SmgR;
 
-    public float ki = 15f;
+    public float ki = 20f;
 
     void Start ()
     {
@@ -80,6 +83,7 @@ public class ShootingScriptRight : MonoBehaviour {
             ShotgunR.SetActive(false);
             SmgR.SetActive(false);
             ShotCounterRight.SetActive(true);
+            ManaRight.SetActive(false);
         }
         //shotgun
         else if (WeaponChoiceR == 8)
@@ -89,6 +93,7 @@ public class ShootingScriptRight : MonoBehaviour {
             ShotgunR.SetActive(true);
             SmgR.SetActive(false);
             ShotCounterRight.SetActive(true);
+            ManaRight.SetActive(false);
         }
         //smg
         else if (WeaponChoiceR == 7)
@@ -98,6 +103,7 @@ public class ShootingScriptRight : MonoBehaviour {
             ShotgunR.SetActive(false);
             SmgR.SetActive(true);
             ShotCounterRight.SetActive(true);
+            ManaRight.SetActive(false);
         }
         else
         {
@@ -105,6 +111,7 @@ public class ShootingScriptRight : MonoBehaviour {
             PistolR.SetActive(false);
             ShotgunR.SetActive(false);
             SmgR.SetActive(false);
+            ManaRight.SetActive(true);
         }
 
 
@@ -118,6 +125,7 @@ public class ShootingScriptRight : MonoBehaviour {
             }
         ManaSystem();
         //UI ammo Counter
+        ManaCounterRight.value = currentMana;
         ShotText.text = currentAmmo + "/" + maxAmmo;
         Pistol();
         Lightning();
@@ -188,6 +196,7 @@ public class ShootingScriptRight : MonoBehaviour {
         {
             if (isFiringRight)
             {
+                shotCounterR -= .2f;
                 if (shotCounterR <= 0)
                 {
                     var Pellet = firePointShotgunR.rotation;
@@ -233,7 +242,7 @@ public class ShootingScriptRight : MonoBehaviour {
                         Pellet.x += Random.Range(-spread, spread);
                         Pellet.y += Random.Range(-spread, spread);
                         shotCounterR = shotTimerR;
-                        StandardBullet newBullet = Instantiate(bullet, firePointSmgR.position, Pellet) as StandardBullet;
+                        StandardBullet newBullet = Instantiate(smgBullet, firePointSmgR.position, Pellet) as StandardBullet;
                         newBullet.speed = bulletSpeed;
                         currentAmmo -= 1;
                     }
@@ -251,7 +260,7 @@ public class ShootingScriptRight : MonoBehaviour {
     
     public void Fireball()
     {
-        int ManaCost = 12;
+        int ManaCost = 8;
         //FireBall spell
         if (WeaponChoiceR == 5)
         {
@@ -275,15 +284,15 @@ public class ShootingScriptRight : MonoBehaviour {
     }
     public void Lightning()
     {
-        int ManaCost = 8;
+        int ManaCost = 2;
         //Lightning spell
         if (WeaponChoiceR == 6)
         {
             if (isFiringRight && currentMana > ManaCost)
             {
-                    shotCounterR = shotTimerR;
-                    lightSpell.SetActive(true);
-                    currentMana -= ManaCost;
+                shotCounterR -= Time.fixedDeltaTime;
+                lightSpell.SetActive(true);
+                currentMana -= ManaCost;
             }
 
             else
@@ -291,8 +300,8 @@ public class ShootingScriptRight : MonoBehaviour {
                 lightSpell.SetActive(false);
             }
         }
-
     }
 
-
 }
+
+

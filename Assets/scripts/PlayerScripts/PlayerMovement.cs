@@ -10,14 +10,12 @@ public class PlayerMovement : MonoBehaviour {
     private Rigidbody PlayerRigidbody;
     public ShootingScriptRight rightHand;
     public ShootingScriptLeft leftHand;
-    //evasion variables
-    //public float evasionSpeed = 20;
     public float evadeTime;
     public float evadeTimer;
     public float evadeDist;
     public float cooldownTimer = 0;
     private bool evading;
-    public Vector3 _movement;
+    public Vector3 movement;
 
      void Awake()
     {
@@ -32,7 +30,11 @@ public class PlayerMovement : MonoBehaviour {
 
     void FixedUpdate()
     {
-        Movement();
+        // Store the input axes.
+        float h = Input.GetAxisRaw("Horizontal");
+        float v = Input.GetAxisRaw("Vertical");
+
+        Movement(h,v);
         Rotation();
         Evasion();
         //Right Hand shooting
@@ -63,18 +65,14 @@ public class PlayerMovement : MonoBehaviour {
 
 
 
-    void Movement ()
+    void Movement (float h, float v)
     {
-        float horiz= Input.GetAxis("Horizontal");
-        float verti   = Input.GetAxis("Vertical");
-
-        _movement = new Vector3(horiz, 0, verti);
-        if(_movement.magnitude > 1 )
-        {
-            _movement.Normalize();
-        }
-        transform.Translate(_movement * moveSpeed * Time.deltaTime, Space.World);
        
+        movement.Set(h, 0f, v);
+
+        movement = movement.normalized * moveSpeed * Time.deltaTime;
+
+        PlayerRigidbody.MovePosition(transform.position + movement);
     }
     void Rotation()
     {
@@ -101,7 +99,7 @@ public class PlayerMovement : MonoBehaviour {
         if(evading)
         {
             evadeTimer = Mathf.Max(0f, evadeTimer - Time.deltaTime);
-            transform.Translate(_movement * evadeDist * Time.deltaTime, Space.World);
+            transform.Translate(movement * evadeDist , Space.World);
         }
         
         if(evadeTimer == 0)
