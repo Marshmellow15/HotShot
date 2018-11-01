@@ -899,6 +899,34 @@ Prefab:
       propertyPath: ManaRight
       value: 
       objectReference: {fileID: 657153220}
+    - target: {fileID: 114813762843014464, guid: c6e976e47d8ec5c48bafde0625517202,
+        type: 2}
+      propertyPath: smgBullet
+      value: 
+      objectReference: {fileID: 114288828222365468, guid: 5c6922affd2a35942bd9503f97fc5184,
+        type: 2}
+    - target: {fileID: 114813762843014464, guid: c6e976e47d8ec5c48bafde0625517202,
+        type: 2}
+      propertyPath: Pellet
+      value: 
+      objectReference: {fileID: 114469739589128550, guid: c013696132bb0e342b0dc6f4cbd98c30,
+        type: 2}
+    - target: {fileID: 114248788425842502, guid: c6e976e47d8ec5c48bafde0625517202,
+        type: 2}
+      propertyPath: SmgBullet
+      value: 
+      objectReference: {fileID: 114288828222365468, guid: 5c6922affd2a35942bd9503f97fc5184,
+        type: 2}
+    - target: {fileID: 114248788425842502, guid: c6e976e47d8ec5c48bafde0625517202,
+        type: 2}
+      propertyPath: ki
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 114813762843014464, guid: c6e976e47d8ec5c48bafde0625517202,
+        type: 2}
+      propertyPath: ki
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c6e976e47d8ec5c48bafde0625517202, type: 2}
   m_IsPrefabParent: 0
@@ -2349,7 +2377,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 1
+  m_MaxValue: 100
   m_WholeNumbers: 0
   m_Value: 1
   m_OnValueChanged:
