@@ -48,8 +48,15 @@ public class SkillTreeReader : MonoBehaviour {
     {
         _skills = new Dictionary<int, Skill>();
 
-        LoadSkillTree();
-	}
+        if (PlayerPrefs.GetString("SkillTree", "").CompareTo("") == 0)
+        {
+            LoadSkillTree();
+        }
+        else
+        {
+            LoadPlayerSkillTree();
+        }
+    }
 	
 	// Update is called once per frame
 	void Update ()
@@ -84,7 +91,42 @@ public class SkillTreeReader : MonoBehaviour {
             Debug.LogError("Cannot load game data!");
         }        
     }
+    public void LoadPlayerSkillTree()
+    {
+        string dataAsJson = PlayerPrefs.GetString("SkillTree");
 
+        // Pass the json to JsonUtility, and tell it to create a SkillTree object from it
+        SkillTree loadedData = JsonUtility.FromJson<SkillTree>(dataAsJson);
+
+        // Store the SkillTree as an array of Skill
+        _skillTree = new Skill[loadedData.skilltree.Length];
+        _skillTree = loadedData.skilltree;
+
+        // Populate a dictionary with the skill id and the skill data itself
+        for (int i = 0; i < _skillTree.Length; ++i)
+        {
+            _skills.Add(_skillTree[i].id_Skill, _skillTree[i]);
+        }
+    }
+
+    public void SaveSkillTree()
+    {
+        // We fill with as many skills as nodes we have
+        SkillTree skillTree = new SkillTree();
+        skillTree.skilltree = new Skill[_skillTree.Length];
+        for (int i = 0; i < _skillTree.Length; ++i)
+        {
+            _skills.TryGetValue(_skillTree[i].id_Skill, out _skillInspected);
+            if (_skillInspected != null)
+            {
+                skillTree.skilltree[i] = _skillInspected;
+            }
+        }
+
+        string json = JsonUtility.ToJson(skillTree);
+
+        PlayerPrefs.SetString("SkillTree", json);
+    }
     public bool IsSkillUnlocked(int id_skill)
     {
         if (_skills.TryGetValue(id_skill, out _skillInspected))

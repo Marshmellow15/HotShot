@@ -5,6 +5,13 @@ using UnityEngine.UI;
 
 public class ShootingScriptLeft : MonoBehaviour {
 
+    //skills
+    //1 = smg
+    //2 = shotgun
+    //3 = fireball
+    //4 = lightning
+
+
     public bool isFiringLeft;
 
     public StandardBullet bullet;
@@ -155,7 +162,7 @@ public class ShootingScriptLeft : MonoBehaviour {
 
     public void Pistol()
     {
-
+        
         //StandardBullets
         if (WeaponChoiceL == 1)
         {
@@ -182,113 +189,123 @@ public class ShootingScriptLeft : MonoBehaviour {
 
     public void Smg()
     {
-        
-        //StandardBullets
-        if (WeaponChoiceL == 7)
+        if (SkillTreeReader.Instance.IsSkillUnlocked(1))
         {
-            float spread = 0.2f;
-            if (isFiringLeft)
+            //StandardBullets
+            if (WeaponChoiceL == 7)
             {
-                shotCounterL -= .2f;
-                if (shotCounterL <= 0)
+                float spread = 0.2f;
+                if (isFiringLeft)
                 {
-                    shotCounterL = shotTimerL;
-                    var Pellet = firePointSmgL.rotation;
-                    Pellet.x += Random.Range(-spread, spread);
-                    Pellet.y += Random.Range(-spread, spread);
-                    shotCounterL = shotTimerL;
-                    StandardBullet newBullet0 = Instantiate(SmgBullet, firePointSmgL.position, Pellet) as StandardBullet;
-                    newBullet0.speed = bulletSpeed;
-                    currentAmmo -= 1;
+                    shotCounterL -= .2f;
+                    if (shotCounterL <= 0)
+                    {
+                        shotCounterL = shotTimerL;
+                        var Pellet = firePointSmgL.rotation;
+                        Pellet.x += Random.Range(-spread, spread);
+                        Pellet.y += Random.Range(-spread, spread);
+                        shotCounterL = shotTimerL;
+                        StandardBullet newBullet0 = Instantiate(SmgBullet, firePointSmgL.position, Pellet) as StandardBullet;
+                        newBullet0.speed = bulletSpeed;
+                        currentAmmo -= 1;
+                    }
                 }
-            }
 
-            else
-            {
-                shotCounterL = 0;
+                else
+                {
+                    shotCounterL = 0;
 
+                }
             }
         }
     }
 
     public void Shotgun()
     {
-       
-        float spread = 0.02f;
-        int count = 4;
-        int i = 0;
-        if (WeaponChoiceL == 8)
+        if (SkillTreeReader.Instance.IsSkillUnlocked(2))
         {
-            if (isFiringLeft)
+            float spread = 0.02f;
+            int count = 4;
+            int i = 0;
+            if (WeaponChoiceL == 8)
             {
-                shotCounterL -= Time.fixedDeltaTime;
-                if (shotCounterL <= 0)
+                if (isFiringLeft)
                 {
-                  
-                    shotCounterL = shotTimerL;
-                    while (i < count)
+                    shotCounterL -= Time.fixedDeltaTime;
+                    if (shotCounterL <= 0)
                     {
-                        var Pellet = firePointShotgunL.rotation;
-                        Pellet.x += Random.Range(-spread, spread);
-                        Pellet.y += Random.Range(-spread, spread);
-                        StandardBullet newBullet0 = Instantiate(pellet, firePointShotgunL.position, Pellet) as StandardBullet;
-                        newBullet0.speed = bulletSpeed;
-                        i++;
+
+                        shotCounterL = shotTimerL;
+                        while (i < count)
+                        {
+                            var Pellet = firePointShotgunL.rotation;
+                            Pellet.x += Random.Range(-spread, spread);
+                            Pellet.y += Random.Range(-spread, spread);
+                            StandardBullet newBullet0 = Instantiate(pellet, firePointShotgunL.position, Pellet) as StandardBullet;
+                            newBullet0.speed = bulletSpeed;
+                            i++;
+                        }
+                        currentAmmo -= 1;
                     }
-                    currentAmmo -= 1;
                 }
-            }
 
-            else
-            {
-                shotCounterL = 0;
+                else
+                {
+                    shotCounterL = 0;
 
+                }
             }
         }
     }
 
     public void Fireball()
     {
-        int ManaCost = 8;
-        //FireBall spell
-        if (WeaponChoiceL == 2)
+        if (SkillTreeReader.Instance.IsSkillUnlocked(3))
         {
-            if (isFiringLeft && currentMana > ManaCost )
+            int ManaCost = 8;
+            //FireBall spell
+            if (WeaponChoiceL == 2)
             {
-                
-                if (shotCounterL <= 0)
+                if (isFiringLeft && currentMana > ManaCost)
                 {
-                    shotCounterL = shotTimerL;
-                    Fireball newFireballSpell = Instantiate(fireballSpell, firePointSpells.position, firePointSpells.rotation) as Fireball;
-                    newFireballSpell.speed = bulletSpeed;
-                    currentMana -= ManaCost;
+
+                    if (shotCounterL <= 0)
+                    {
+                        shotCounterL = shotTimerL;
+                        Fireball newFireballSpell = Instantiate(fireballSpell, firePointSpells.position, firePointSpells.rotation) as Fireball;
+                        newFireballSpell.speed = bulletSpeed;
+                        currentMana -= ManaCost;
+                    }
                 }
-            }
 
-            else
-            {
-                shotCounterL = 0;
+                else
+                {
+                    shotCounterL = 0;
 
+                }
             }
         }
 
     }
     public void Lightning()
     {
-        int ManaCost = 2;
-        //Lightning spell
-        if (WeaponChoiceL == 3)
+        if (SkillTreeReader.Instance.IsSkillUnlocked(4))
         {
-            if (isFiringLeft && currentMana > ManaCost)
+            int ManaCost = 2;
+            //Lightning spell
+            if (WeaponChoiceL == 3)
             {
-                shotCounterL -= Time.fixedDeltaTime;
-                lightSpell.SetActive(true);
-                currentMana -= ManaCost;
-            }
+                if (isFiringLeft && currentMana > ManaCost)
+                {
+                    shotCounterL -= Time.fixedDeltaTime;
+                    lightSpell.SetActive(true);
+                    currentMana -= ManaCost;
+                }
 
-            else
-            {
-                lightSpell.SetActive(false);
+                else
+                {
+                    lightSpell.SetActive(false);
+                }
             }
         }
     }

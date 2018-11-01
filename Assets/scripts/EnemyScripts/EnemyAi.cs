@@ -15,7 +15,7 @@ public class EnemyAi : MonoBehaviour {
     public GameObject[] waypoints;
     public int EnemyHealth = 25;
     public int currentEnemyHealth;
-
+    public int enemyScoreValue = 40;
 
     public GameObject GetPlayer()
     {
@@ -73,6 +73,7 @@ public class EnemyAi : MonoBehaviour {
         if (currentEnemyHealth <= 0)
         {
             currentEnemyHealth = 0;
+            GameManager.Score += enemyScoreValue;
             Destroy(gameObject);
         }
 
