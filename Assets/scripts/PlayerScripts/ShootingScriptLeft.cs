@@ -189,8 +189,7 @@ public class ShootingScriptLeft : MonoBehaviour {
 
     public void Smg()
     {
-        if (SkillTreeReader.Instance.IsSkillUnlocked(1))
-        {
+
             //StandardBullets
             if (WeaponChoiceL == 7)
             {
@@ -217,13 +216,12 @@ public class ShootingScriptLeft : MonoBehaviour {
 
                 }
             }
-        }
+        
     }
 
     public void Shotgun()
     {
-        if (SkillTreeReader.Instance.IsSkillUnlocked(2))
-        {
+
             float spread = 0.02f;
             int count = 4;
             int i = 0;
@@ -255,13 +253,12 @@ public class ShootingScriptLeft : MonoBehaviour {
 
                 }
             }
-        }
+        
     }
 
     public void Fireball()
     {
-        if (SkillTreeReader.Instance.IsSkillUnlocked(3))
-        {
+
             int ManaCost = 8;
             //FireBall spell
             if (WeaponChoiceL == 2)
@@ -286,11 +283,10 @@ public class ShootingScriptLeft : MonoBehaviour {
             }
         }
 
-    }
+    
     public void Lightning()
     {
-        if (SkillTreeReader.Instance.IsSkillUnlocked(4))
-        {
+
             int ManaCost = 2;
             //Lightning spell
             if (WeaponChoiceL == 3)
@@ -309,7 +305,3 @@ public class ShootingScriptLeft : MonoBehaviour {
             }
         }
     }
-
-
-
-}
